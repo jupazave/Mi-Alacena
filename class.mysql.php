@@ -31,12 +31,12 @@ class MySQL {
     var $rawResults;                // Holds raw 'arrayed' results
     var $arrayedResult;         // Holds an array of the result
     
-    var $hostname;  // MySQL Hostname
-    var $username;  // MySQL Username
-    var $password;  // MySQL Password
-    var $database;  // MySQL Database
+    private $hostname;  // MySQL Hostname
+    private $username;  // MySQL Username
+    private $password;  // MySQL Password
+    private $database;  // MySQL Database
     
-    var $databaseLink;      // Database Connection Link
+    private $databaseLink;      // Database Connection Link
     
 
 

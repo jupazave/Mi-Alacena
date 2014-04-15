@@ -6,14 +6,14 @@ body {
 .jumbotron {
 	height: 800px;
 	background-color:#EBEFF4;  
-      background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEFF4), color-stop(1, #FFFFFF));
-      background-image:-webkit-linear-gradient(#EBEFF4, #FFFFFF);
-      background-image:-moz-linear-gradient(top, #EBEFF4, #FFFFFF);
-      background-image:-o-linear-gradient(top, #EBEFF4, #FFFFFF);
-      filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#EBEFF4', EndColorStr='#FFFFFF');
-    color: rgb(153, 153, 153);
-    padding-top: 100px;
-    text-align: center;
+  background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEFF4), color-stop(1, #FFFFFF));
+  background-image:-webkit-linear-gradient(#EBEFF4, #FFFFFF);
+  background-image:-moz-linear-gradient(top, #EBEFF4, #FFFFFF);
+  background-image:-o-linear-gradient(top, #EBEFF4, #FFFFFF);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#EBEFF4', EndColorStr='#FFFFFF');
+  color: rgb(153, 153, 153);
+  padding-top: 100px;
+  text-align: center;
 }
 
 .products {
@@ -107,6 +107,18 @@ body {
   -o-transform: rotate(-3deg);
   -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
+}
+
+.carita{
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  /*display: inline-block;*/
+  display: block;
+  /* margin-top: 0; */
+  font-size: 40px;
 }
 
 .btn {
