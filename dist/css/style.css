@@ -1,0 +1,119 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-bottom: 120px;
+}
+
+.jumbotron {
+	height: 800px;
+	background-color:#EBEFF4;  
+      background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEFF4), color-stop(1, #FFFFFF));
+      background-image:-webkit-linear-gradient(#EBEFF4, #FFFFFF);
+      background-image:-moz-linear-gradient(top, #EBEFF4, #FFFFFF);
+      background-image:-o-linear-gradient(top, #EBEFF4, #FFFFFF);
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#EBEFF4', EndColorStr='#FFFFFF');
+    color: rgb(153, 153, 153);
+    padding-top: 100px;
+    text-align: center;
+}
+
+.products {
+	margin: 100px auto 0 auto;
+	padding: 50px;
+	width: 900px;
+	height: 500px;
+	border: 25px solid #FFF;
+	background-color: #FFF;
+	color: #777;
+}
+
+.estados-wrap {
+	background-color: rgb(245, 245, 245);
+}
+
+.estados {
+	text-align: left;
+	width: 92%;
+	margin: 0 20px 10px 10px;
+}
+
+.estados-title {
+	background-color: #333;
+	color: #FFF;
+	width: 100%;
+	text-align: left;
+	padding: 5px 10px;
+}
+
+.estados {
+	height: 36px;
+	padding: 8px 5px;
+}
+
+.margin-bottom {
+	margin-bottom: 50px;
+}
+
+.products-title {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	text-align:left;
+	border: 1px solid;
+	padding: 5px;
+	background-color: rgba(245, 245, 245, 0.4);
+}
+
+.web-font {
+	font-family: 'Tauri', sans-serif;
+}
+
+
+
+
+/* Items */
+
+.item {
+	border: 1px solid #777;
+	border-radius: 2px;
+	position: relative;
+}
+
+.box {
+	width: 70%;
+	height: 200px;
+	background: #FFF;
+	margin: 40px auto;
+}
+
+.effect {
+  position: relative;
+}
+
+.effect:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+
+.btn {
+	border-radius: 2px;
+	margin-bottom: 50px;
+}
+
+.btn-lg {
+	padding: 12px 46px;
+}
