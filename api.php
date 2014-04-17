@@ -87,8 +87,20 @@ class API extends REST {
 
             $this->response($this->json($error), 404);
         }else{
+
+            $insert = null;
+
+            if ($estado != "31") {
+
+                $data = array('datetime' => date("Y-m-d H:i:s"), 'ip' => $_SERVER['REMOTE_ADDR'], "idEstado" => $estado);
+
+                $insert =  $this->db->Insert($data,"consultaEstado");
+
+            }
+
+            
             $query = $this->db->ExecuteSQL(
-                sprintf("SELECT nombre, precio FROM productos where estado = '%s' and hidden = 0 ",
+                sprintf("SELECT nombre, precio FROM productos where estado = '%s' and hidden = 0",
                     mysql_real_escape_string($estado)
                     ));
 
@@ -97,7 +109,7 @@ class API extends REST {
             if ($query) {
                 if (is_bool($query)) {
 
-                    $error = array('status' => false, "msg" => "No results");
+                    $error = array('status' => false, "msg" => "No results" , "more" => $insert);
 
                     $this->response($this->json($error), 200);
 
@@ -116,7 +128,7 @@ class API extends REST {
                             
                     }
 
-                    $results = array('status' => true, "data" => $productos);
+                    $results = array('status' => true, "data" => $productos, "more" => $insert);
 
                     $this->response($this->json($results), 200);
 

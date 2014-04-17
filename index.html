@@ -61,28 +61,50 @@
             </div>
         </div>
 
+
+
+
         <script type="text/javascript">
 
         $(document).ready(function(){
 
             var modalmaker = bootbox;
 
+
+
             $("#pagar").click(function () {
-                var some_html ="1";
-                some_html += "";
-                some_html += "";
-                some_html += "";
-                some_html += "";
+                var title_html ="Confirma tu pedido de compra:";
+                var some_html = "";
+                
+                var total = 0;
+
+                $(".yay").each(function (index, value){
+
+                    var titulo = $(value).data("nombre");
+                    var precio = parseInt($(value).data("precio"));
+
+                    some_html += "<div class=\"row\">";
+                    some_html += "<div class=\"col-md-8\">" + titulo + "</div>";
+                    some_html += "<div class=\"col-md-4 text-right\"> $" + precio + "MXN</div>";
+                    some_html += "</div>";
+
+                    total += precio;
+
+                });
+
+                some_html += "<div class=\"row\">";
+                some_html += "<div class=\"col-md-4 col-md-offset-8 text-right total\">Total: $" + total + "MXN</div>";
+                some_html += "</div>";
 
                 modalmaker.dialog({
-                    message: "I am a custom dialog",
-                    title: "Custom title",
+                    message: some_html,
+                    title: title_html,
                     buttons: {
                         success: {
-                            label: "Success!",
+                            label: "¡Mare, Lo quiero!",
                             className: "btn-success",
                             callback: function() {
-                                Example.show("great success");
+                                // Example.show("great success");
                             }
                         },
                     }
@@ -109,6 +131,10 @@
 
                     $("#estados").change(function() {
 
+                        $("#productos").hide("fast");
+
+
+
                         var id_estado = $( this ).val();
 
                         $.post("http://localhost/freelanceL/Productos/api.php?rquest=getProductos",{estado : id_estado},function(data){
@@ -120,26 +146,43 @@
                                 $(productos).each(function (index , value) {
 
                                     if (index%3 == 0 && primera) {
-                                        html = html + "</div>";
-                                        html = html + "<div class=\"row\">";
+                                        html += "</div>";
+                                        html += "<div class=\"row\">";
                                     };
+
                                     id = index +1;
 
-
-
-                                    html = html + "<div class=\"col-md-4 producto-a\" ><a href=\"#\"><div style=\"width:250px; height:250px\" class=\"item box effect img-thumbnail prod-imagen\"><img class=\"img-responsive\" src=\"" + value.imagen + "\"></div></a><h4 class=\"prod-tit\">" + value.nombre + "</h4><h5 class=\"prod-precio\">$" + value.precio + " MXN</h5>";
+                                    html += "<div class=\"col-md-4 producto-select\" data-selected=\"false\"";
+                                    html += "data-precio=\"" + value.precio + "\" data-nombre=\"" + value.nombre + "\">";
+                                    html += "<div style=\"width:250px; height:250px\" class=\"item box effect img-thumbnail prod-imagen\">";
+                                    html += "<img class=\"img-responsive\" src=\"" + value.imagen + "\"></div>";
+                                    html += "<h4 class=\"prod-tit\">" + value.nombre + "</h4>";
+                                    html += "<h5 class=\"prod-precio\">$" + value.precio + " MXN</h5>";
+                                    html += "</div>";
 
                                     primera = true;
 
-                                    html = html + "</div>";
                                 });
 
-                                html = html + "</div>";
+                                html += "</div>";
 
-                                $("#productos").html(html);
+                                $("#productos").html(html).show("fast");
+
+                                $(".producto-select").click(function () {
+
+                                    if ($(this).hasClass( "yay" )) {
+
+                                        $(this).removeClass("yay");
+
+                                    }else{
+                                        $(this).addClass("yay");
+                                    };
+                                    
+                                });
+
                             }else{
 
-                                $("#productos").html("<div class=\"row\">" + "<h3> No tenemos productos del estado que seleccionaste <span class=\"carita\"> :(</span></h3>" + "</div>");
+                                $("#productos").html("<div class=\"row\">" + "<h3> No tenemos productos del estado que seleccionaste <span class=\"carita\"> :(</span></h3>" + "</div>").show("fast");
                             };
                         });
                         // Check input( $( this ).val() ) for validity here

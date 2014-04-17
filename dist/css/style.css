@@ -130,3 +130,16 @@ body {
 .btn-lg {
 	padding: 12px 58px;
 }
+.producto-select{
+    cursor: pointer;
+}
+
+.yay{
+    color:red;
+}
+
+.total{
+    margin-top: 10px;
+    border-top: 1px;
+    padding-top: 10px
+}
