@@ -11,7 +11,9 @@ class API extends REST {
 
     public $data = "";
 
+    const DB_SERVER = "productosdb.db.11310618.hostedresource.com";
     const DB_USER = "productosdb";
+    const DB_PASSWORD = "Abeja2014!";
     const DB_PORT = 3306;
     const DB = "productosdb";
 
