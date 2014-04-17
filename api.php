@@ -23,6 +23,7 @@ class API extends REST {
     {
         parent::__construct();// Init parent contructor
         $this->dbConnect();// Initiate Database connection
+        //hola
     }
 
     //Database connection
