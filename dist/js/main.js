@@ -1,69 +1,4 @@
-<!DOCTYPE html>
-<html lang="es"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
-
-        <title>ProductosdeCasa.com</title>
-
-        <link href="dist/css/bootstrap.css" rel="stylesheet">
-        <link href="dist/css/bootstrap-theme.css" rel="stylesheet">
-        <link href="dist/css/style.css" rel="stylesheet">
-        <link href="dist/css/font-awesome.css" rel="stylesheet">
-
-        <link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
-
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-        <script src="dist/js/bootstrap.min.js"></script>
-
-        <script src="dist/js/bootbox.min.js"></script>
-
-    </head>
-
-    <body>
-
-        <div class="jumbotron web-font">
-            <div class="container">
-                <h1>Productos de Casa</h1>
-                <p>Envíos a todo México de productos locales auténticos de cada Estado.</p>
-                <div class="products img-responsive">
-                    <h2 class="margin-bottom">Adquiere todos tus productos favoritos</h2>
-
-                    <div class="row">
-                        <div class="col-md-7"></div>
-                        <div class="col-md-5">
-                            <div class="form-group margin-bottom estados-wrap">
-                                <label class="estados-title">Elige un estado:</label><br>
-                                <select id="estados" class="estados" class="form-control">
-                                    
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="productos">
-
-                        
-
-                        
-
-                    </div>
-
-                    <div class="pull-right">
-                        <button id="pagar" class="btn btn-lg btn-primary"> Continuar <span class="glyphicon chevron-right"></span></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script type="text/javascript">
-
-        $(document).ready(function(){
+$(document).ready(function(){
 
             var modalmaker = bootbox;
 
@@ -152,10 +87,3 @@
             
 
         });
-
-        </script>
-
-        
-
-    </body>
-</html>
