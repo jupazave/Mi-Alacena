@@ -100,7 +100,7 @@ class API extends REST {
 
             
             $query = $this->db->ExecuteSQL(
-                sprintf("SELECT nombre, precio FROM productos where estado = '%s' and hidden = 0",
+                sprintf("SELECT nombre, precio, imagen FROM productos where estado = '%s' and hidden = 0",
                     mysql_real_escape_string($estado)
                     ));
 
@@ -119,7 +119,9 @@ class API extends REST {
 
                     foreach ($query as $key => $value) {
 
-                        $value["imagen"] = "";
+                        if (!isset($value["imagen"])) {
+                            $value["imagen"] = "";
+                        }
 
                         $productos[] = array(
                             "nombre"=>utf8_encode($value["nombre"]), 
