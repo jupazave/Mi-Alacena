@@ -160,6 +160,7 @@ h1,h1+p,.prod-tit{
     padding-top: 10px
 }
 
+
 .titulo-list {
   padding-top: 6px;
   padding-left: 18px;
@@ -182,3 +183,13 @@ select.form-control{
 
 
 }
+.modal-header {
+  padding: 22px 20px;
+}
+
+.modal-body {
+  background-color: #FFF;
+  box-shadow: inset 0px 2px 7px #EEE;
+
+}
+
