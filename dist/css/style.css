@@ -1,6 +1,22 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-bottom: 120px;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+h1,h1+p,.prod-tit{
+  font-family: 'Shadows Into Light Two', 'cursive';
+}
+
+.jls * h1{
+
+  font-family: 'Fjalla One', sans-serif !important;
+
+}
+
+.jls * {
+    font-family: 'Cantarell', sans-serif !important;
 }
 
 .jumbotron {
@@ -63,9 +79,9 @@ body {
 	background-color: rgba(245, 245, 245, 0.4);
 }
 
-.web-font {
+/*.web-font {
 	font-family: 'Tauri', sans-serif;
-}
+}*/
 
 
 .prod-tit {
@@ -119,7 +135,7 @@ body {
   transform: rotate(90deg);
   /*display: inline-block;*/
   display: block;
-  /* margin-top: 0; */
+   margin-top: 5px; 
   font-size: 40px;
 }
 

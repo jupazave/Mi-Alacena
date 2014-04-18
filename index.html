@@ -8,14 +8,15 @@
         <meta name="author" content="">
         <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
 
-        <title>ProductosdeCasa.com</title>
+        <title>Mi Alacena</title>
 
         <link href="dist/css/bootstrap.css" rel="stylesheet">
         <link href="dist/css/bootstrap-theme.css" rel="stylesheet">
         <link href="dist/css/style.css" rel="stylesheet">
         <link href="dist/css/font-awesome.css" rel="stylesheet">
 
-        <link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans|Shadows+Into+Light+Two|Tauri|Fjalla+One|Cantarell" rel="stylesheet" type="text/css" />
+
 
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
@@ -29,7 +30,7 @@
 
         <div class="jumbotron web-font">
             <div class="container">
-                <h1>Productos de Casa</h1>
+                <h1>Mi Alacena</h1>
                 <p>Envíos a todo México de productos locales auténticos de cada Estado.</p>
                 <div class="products img-responsive">
                     <h2 class="margin-bottom">Adquiere todos tus productos favoritos</h2>
@@ -69,6 +70,10 @@
         $(document).ready(function(){
 
             var modalmaker = bootbox;
+
+            if(Math.random() %2 > .5){
+                $("body").addClass("jls");
+            }
 
 
 
@@ -115,7 +120,7 @@
 
 
 
-            $.post("http://localhost/freelanceL/Productos/api.php?rquest=getEstados",null,function(data){
+            $.post("api.php?rquest=getEstados",null,function(data){
                 if (data.status) {
                     estados = data.data;
                     html = "";
@@ -137,7 +142,7 @@
 
                         var id_estado = $( this ).val();
 
-                        $.post("http://localhost/freelanceL/Productos/api.php?rquest=getProductos",{estado : id_estado},function(data){
+                        $.post("api.php?rquest=getProductos",{estado : id_estado},function(data){
                             if (data.status) {
                                 productos = data.data;
                                 html = "<div class=\"row\">";
