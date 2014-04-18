@@ -15,21 +15,42 @@ h1,h1+p,.prod-tit{
 
 }
 
-.jls * {
+.jls *:not(.fa) {
     font-family: 'Cantarell', sans-serif !important;
 }
 
-.jumbotron {
-	height: 800px;
-	background-color:#EBEFF4;  
+.container{
+  max-width: 980px;
+}
+
+.main-content{
+  padding-top: 30px;
+  background-color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+
+.wrap{
+  /*min-height: 800px;*/
+  background-color:#EBEFF4;  
   background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEFF4), color-stop(1, #FFFFFF));
   background-image:-webkit-linear-gradient(#EBEFF4, #FFFFFF);
   background-image:-moz-linear-gradient(top, #EBEFF4, #FFFFFF);
   background-image:-o-linear-gradient(top, #EBEFF4, #FFFFFF);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#EBEFF4', EndColorStr='#FFFFFF');
-  color: rgb(153, 153, 153);
-  padding-top: 100px;
-  text-align: center;
+
+}
+
+.jumbotron{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: none;
+}
+
+.jumbotron h2{
+  font-size: 21px;
 }
 
 .products {
@@ -49,10 +70,13 @@ h1,h1+p,.prod-tit{
 .estados {
 	text-align: left;
 	width: 92%;
-	margin: 0 20px 10px 10px;
+	/*margin: 0 20px 10px 10px;*/
+  height: 36px;
+  padding: 8px 5px;
+	margin: 4px 15px 10px 15px;
 }
 
-.estados-title {
+.estados-wrap label{
 	background-color: #333;
 	color: #FFF;
 	width: 100%;
@@ -60,12 +84,7 @@ h1,h1+p,.prod-tit{
 	padding: 5px 10px;
 }
 
-.estados {
-	height: 36px;
-	padding: 8px 5px;
-}
-
-.margin-bottom {
+.bottom-buffer {
 	margin-bottom: 50px;
 }
 
@@ -83,31 +102,25 @@ h1,h1+p,.prod-tit{
 	font-family: 'Tauri', sans-serif;
 }*/
 
-
-.prod-tit {
-    
+.product{
+  margin-bottom: 30px;
 }
 
-/* Items */
-
-.item {
+.product-img {
 	border: 1px solid #777;
 	border-radius: 2px;
 	position: relative;
-}
-
-.box {
-	width: 70%;
-	height: 200px;
+	/* width: auto; */
+	/* max-height: 200px; */
 	background: #FFF;
-	margin: 40px auto;
-}
+	/* margin: 40px auto; */
+	margin-bottom: 8px;
+	padding: 20px;
 
-.effect {
   position: relative;
 }
 
-.effect:before {
+.product-img:before {
   z-index: -1;
   position: absolute;
   content: "";
@@ -184,12 +197,30 @@ select.form-control{
 
 }
 .modal-header {
-  padding: 22px 20px;
+  padding: 22px 25px;
 }
 
 .modal-body {
   background-color: #FFF;
+  padding: 22px 25px;
   box-shadow: inset 0px 2px 7px #EEE;
 
+}
+
+.modal-body:after {
+  background-color: #fff;
+  height: 7px;
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  margin-bottom: 0px;
+  left: -7px;
+  right: -7px;
+  margin: 0 7px;
+}
+
+.modal-footer {
+  padding: 21px 19px 20px;
+  margin-top: 2px; 
 }
 

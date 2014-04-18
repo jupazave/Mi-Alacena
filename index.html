@@ -28,18 +28,28 @@
 
     <body>
 
-        <div class="jumbotron web-font">
+        <div class="wrap">
+
+            
             <div class="container">
-                <h1>Mi Alacena</h1>
-                <p>Envíos a todo México de productos locales auténticos de cada Estado.</p>
-                <div class="products img-responsive">
-                    <h2 class="margin-bottom">Adquiere todos tus productos favoritos</h2>
+
+                <div class="jumbotron text-center">
+
+                    <h1>Mi Alacena</h1>
+                    <h2>Envíos a todo México de productos locales auténticos de cada Estado.</h2>
+                    
+
+                </div>
+
+                <div class="main-content">
+
+                    <h3 class="text-center bottom-buffer">Adquiere todos tus productos favoritos</h3>
 
                     <div class="row">
                         <div class="col-md-7"></div>
                         <div class="col-md-5">
-                            <div class="form-group margin-bottom estados-wrap">
-                                <label class="estados-title">Elige un estado:</label><br>
+                            <div class="form-group bottom-buffer estados-wrap">
+                                <label>Elige un estado:</label><br>
                                 <select id="estados" class="estados" class="form-control">
                                     
                                 </select>
@@ -48,22 +58,26 @@
                     </div>
 
                     <div id="productos">
-
                         
-
-                        
-
                     </div>
 
-                    <div class="pull-right">
-                        <button id="pagar" class="btn btn-lg btn-primary"> Continuar <span class="glyphicon chevron-right"></span></button>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text">
+                        </div>
+                        <div class="col-md-4 ">
+                             <button id="pagar" class="btn btn-lg btn-primary pull-right"> Continuar </button>
+                        </div>
                     </div>
+
+                    
                 </div>
+
+                
+
             </div>
+
         </div>
-
-
-
 
         <script type="text/javascript">
 
@@ -165,11 +179,11 @@
 
                                     id = index +1;
 
-                                    html += "<div class=\"col-md-4 producto-select\" data-selected=\"false\"";
+                                    html += "<div class=\"col-md-4 text-center product\"";
                                     html += "data-precio=\"" + value.precio + "\" data-nombre=\"" + value.nombre + "\">";
-                                    html += "<div style=\"width:250px; height:250px\" class=\"item box effect img-thumbnail prod-imagen\">";
+                                    html += "<div class=\"img-thumbnail product-img\">";
                                     html += "<img class=\"img-responsive\" src=\"http://mialacena.mx/images/" + value.imagen + "\"></div>";
-                                    html += "<h4 class=\"prod-tit\">" + value.nombre + "</h4>";
+                                    html += "<h4 class=\"prod-titulo\">" + value.nombre + "</h4>";
                                     html += "<h5 class=\"prod-precio\">$" + value.precio + " MXN</h5>";
                                     html += "</div>";
 
@@ -195,7 +209,7 @@
 
                             }else{
 
-                                $("#productos").html("<div class=\"row\">" + "<h3> No tenemos productos del estado que seleccionaste <span class=\"carita\"> :(</span></h3>" + "</div>").show("fast");
+                                $("#productos").html("<div class=\"row\">" + "<h3 class=\"text-center\"> No tenemos productos del estado que seleccionaste <span class=\"carita\"> :(</span></h3>" + "</div>").show("fast");
                             };
                         });
                         // Check input( $( this ).val() ) for validity here
