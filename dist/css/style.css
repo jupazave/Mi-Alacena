@@ -159,3 +159,13 @@ h1,h1+p,.prod-tit{
     border-top: 1px;
     padding-top: 10px
 }
+
+.modal-header {
+  padding: 22px 20px;
+}
+
+.modal-body {
+  background-color: #FFF;
+  box-shadow: inset 0px 2px 7px #EEE;
+
+}
