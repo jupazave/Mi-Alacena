@@ -159,3 +159,26 @@ h1,h1+p,.prod-tit{
     border-top: 1px;
     padding-top: 10px
 }
+
+.titulo-list {
+  padding-top: 6px;
+  padding-left: 18px;
+  display: block;
+}
+
+.fila{
+  margin-bottom: 10px;
+}
+
+select.form-control{
+
+  width: 44px;
+  height: 34px;
+  padding: 0px;
+  /* margin-right: 12px; */
+  text-align: center;
+  padding-left: 9px;
+  font-size: 11px;
+
+
+}

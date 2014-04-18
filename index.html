@@ -88,9 +88,17 @@
                     var titulo = $(value).data("nombre");
                     var precio = parseInt($(value).data("precio"));
 
-                    some_html += "<div class=\"row\">";
-                    some_html += "<div class=\"col-md-8\">" + titulo + "</div>";
-                    some_html += "<div class=\"col-md-4 text-right\"> $" + precio + "MXN</div>";
+                    some_html += "<div class=\"fila row\">";
+                    some_html += "<div class=\"col-md-1\"><select id=\"cantidad_" + index + "\" class=\"form-control items-producto\">";
+                    some_html += "<option>1</option>";
+                    some_html += "<option>2</option>";
+                    some_html += "<option>3</option>";
+                    some_html += "<option>4</option>";
+                    some_html += "<option>5</option>";
+                    some_html += "</select>";
+                    some_html += "</div>";
+                    some_html += "<div class=\"col-md-8\"><span class=\"titulo-list\">" + titulo + "</span></div>";
+                    some_html += "<div  id=\"precio_" + index + " \" class=\"col-md-3 text-right\"><span class=\"titulo-list\"> $" + precio + "MXN</span></div>";
                     some_html += "</div>";
 
                     total += precio;
