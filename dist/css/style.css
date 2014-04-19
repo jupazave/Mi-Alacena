@@ -55,7 +55,11 @@ h1,h1+p,.prod-tit{
 
 .product {
   padding-top: 20px;
+  padding-bottom: 10px;
   border-radius: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 290px;
 }
 
 .product:hover {
@@ -121,6 +125,7 @@ h1,h1+p,.prod-tit{
 	margin-bottom: 8px;
 	padding: 20px;
   position: relative;
+  max-width: 250px;
 }
 
 .product-img:before {
@@ -164,8 +169,13 @@ h1,h1+p,.prod-tit{
 }
 
 .yay{
-    color:red;
-    background-color: rgb(245, 245, 245);
+    background-color: #999;
+    color: #FFF;
+}
+
+.yay:hover {
+  background-color: #999;
+  color: #FFF;
 }
 
 .total{
