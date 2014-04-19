@@ -109,11 +109,6 @@ h1,h1+p,.prod-tit{
 .product{
   margin-bottom: 30px;
   cursor: pointer;
-
-}
-
-select:after{
-  display: none;
 }
 
 .product-img {
@@ -126,7 +121,6 @@ select:after{
 	/* margin: 40px auto; */
 	margin-bottom: 8px;
 	padding: 20px;
-
   position: relative;
 }
 
@@ -180,7 +174,6 @@ select:after{
     padding-top: 10px
 }
 
-
 .titulo-list {
   padding-top: 6px;
   padding-left: 18px;
@@ -191,7 +184,7 @@ select:after{
   margin-bottom: 10px;
 }
 
-select.form-control{
+select.form-control.items-producto{
 
   width: 44px;
   height: 34px;
@@ -200,6 +193,7 @@ select.form-control{
   text-align: center;
   padding-left: 9px;
   font-size: 11px;
+  z-index: 3;
 
 
 }
