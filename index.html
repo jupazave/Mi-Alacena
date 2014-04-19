@@ -114,8 +114,9 @@
                     some_html += "<option>5</option>";
                     some_html += "</select>";
                     some_html += "</div>";
-                    some_html += "<div class=\"col-md-8\"><span class=\"titulo-list\">" + titulo + "</span></div>";
-                    some_html += "<div  id=\"precio_" + id + "\" class=\"col-md-3 text-right\"><span class=\"titulo-list precio-list\"> $" + precio + "MXN</span></div>";
+                    some_html += "<div class=\"col-md-9\"><span class=\"titulo-list\">" + titulo + "</span></div>";
+                    some_html += "<div  id=\"precio_" + id + "\" class=\"col-md-2 text-right\">";
+                    some_html += "<span class=\"titulo-list precio-list\"> $" + precio + "MXN</span></div>";
                     some_html += "</div>";
 
                     total += precio;
@@ -135,11 +136,11 @@
                 some_html += "<div class=\"row\">";
                 some_html += "<div class=\"col-md-8\">";
                 some_html += "<div class=\"form-group\">";
-                some_html += "<label for=\"name\">Nombre Completo</label>";
+                some_html += "<label for=\"name\"  class=\"control-label\">Nombre Completo</label>";
                 some_html += "<input type=\"text\" class=\"form-control\" id=\"name\">";
                 some_html += "</div>";
                 some_html += "<div class=\"form-group\">";
-                some_html += "<label for=\"email\">Email</label>";
+                some_html += "<label for=\"email\"  class=\"control-label\">Email</label>";
                 some_html += "<input type=\"email\" class=\"form-control\" id=\"email\">";
                 some_html += "</div>";
                 some_html += "</div>";
@@ -156,11 +157,58 @@
                             label: "¡Mare, Lo quiero!",
                             className: "btn-success",
                             callback: function() {
-                                /*sendArray = [
+
+                                productos = new Array();
+
+                                $(".fila.row").each(function (index, value){
+
+                                    select_item = $(value).children("div").children("select");
+
+                                    id = $(select_item).attr("id").split("cantidad_")[1];
+
+                                    cantidad = $(select_item).val();
+
+                                    productos.push({id: id, cantidad: cantidad});
+                                });
+
+
+                                sendArray = [
                                 {name: "name", value: $("#name").val() },
-                                {name: "name", value: $("#name").val() },
-                                l{name: "name", value: $("#name").val() }]
-                                $.post()*/
+                                {name: "email", value: $("#email").val() },
+                                {name: "productos", value: JSON.stringify(productos) }];
+
+                                $.post("api.php?rquest=pedidos",sendArray,function(data){
+
+                                    if (!data.status) {
+                                        
+                                        console.log(data.errores);
+
+                                        if(data.errores.indexOf("name") != -1) { 
+                                            $("#name").closest(".form-group").addClass("has-error");
+                                        } else{
+                                            $("#name").closest(".form-group").removeClass("has-error");
+                                        }
+
+                                        if(data.errores.indexOf("email") != -1) { 
+                                            $("#email").closest(".form-group").addClass("has-error");
+                                        } else{
+                                            $("#email").closest(".form-group").removeClass("has-error");
+                                        }
+
+
+                                        return false;
+
+
+                                    }else{
+
+                                        bootbox.hideAll();
+
+                                    };
+
+
+                                });
+
+                                return false;
                             }
                         },
                     }
