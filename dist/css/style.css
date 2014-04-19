@@ -53,14 +53,17 @@ h1,h1+p,.prod-tit{
   font-size: 21px;
 }
 
-.products {
-	margin: 100px auto 0 auto;
-	padding: 50px;
-	width: 900px;
-	height: 500px;
-	border: 25px solid #FFF;
-	background-color: #FFF;
-	color: #777;
+.product {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-radius: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 290px;
+}
+
+.product:hover {
+  background-color: rgb(245, 245, 245);
 }
 
 .estados-wrap {
@@ -122,6 +125,7 @@ h1,h1+p,.prod-tit{
 	margin-bottom: 8px;
 	padding: 20px;
   position: relative;
+  max-width: 250px;
 }
 
 .product-img:before {
@@ -165,7 +169,13 @@ h1,h1+p,.prod-tit{
 }
 
 .yay{
-    color:red;
+    background-color: #999;
+    color: #FFF;
+}
+
+.yay:hover {
+  background-color: #999;
+  color: #FFF;
 }
 
 .total{
@@ -227,4 +237,3 @@ select.form-control.items-producto{
   padding: 21px 19px 20px;
   margin-top: 2px; 
 }
-
