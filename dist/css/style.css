@@ -171,13 +171,16 @@ h1,h1+p,.prod-tit{
 .total{
     margin-top: 10px;
     border-top: 1px;
-    padding-top: 10px
+    padding-top: 10px;
+    font-weight: bold;
+font-size: 18px;
+}
 }
 
 .titulo-list {
-  padding-top: 6px;
-  padding-left: 18px;
+  margin-top: 7px;
   display: block;
+  margin-left: 4px;
 }
 
 .fila{

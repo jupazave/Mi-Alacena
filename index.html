@@ -63,23 +63,8 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-8">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>Proporcionanos los siguientes datos para realizar tu pedido:</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Nombre">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control"  placeholder="Email">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="col-md-4 ">
+                        
+                        <div class="col-md-4 col-md-offset-8">
                              <button id="pagar" class="btn btn-lg btn-primary pull-right"> Continuar </button>
                         </div>
                     </div>
@@ -135,7 +120,29 @@
 
                 some_html += "<div class=\"row\">";
                 some_html += "<div class=\"col-md-4 col-md-offset-8 text-right total\">Total: $" + total + "MXN</div>";
+                some_html += "</div> <hr>";
+
+
+                some_html += "<div class=\"row\">";
+                some_html += "<div class=\"col-md-12\">";
+                some_html += "<p>Proporcionanos los siguientes datos para realizar tu pedido:</p>";
                 some_html += "</div>";
+                some_html += "</div>";
+                some_html += "<div class=\"row\">";
+                some_html += "<div class=\"col-md-8\">";
+                some_html += "<div class=\"form-group\">";
+                some_html += "<label for=\"name\">Nombre Completo</label>";
+                some_html += "<input type=\"text\" class=\"form-control\" id=\"name\">";
+                some_html += "</div>";
+                some_html += "<div class=\"form-group\">";
+                some_html += "<label for=\"email\">Email</label>";
+                some_html += "<input type=\"email\" class=\"form-control\" id=\"email\">";
+                some_html += "</div>";
+                some_html += "</div>";
+                some_html += "</div>";
+
+                
+
 
                 modalmaker.dialog({
                     message: some_html,
@@ -145,7 +152,11 @@
                             label: "¡Mare, Lo quiero!",
                             className: "btn-success",
                             callback: function() {
-                                // Example.show("great success");
+                                /*sendArray = [
+                                {name: "name", value: $("#name").val() },
+                                {name: "name", value: $("#name").val() },
+                                l{name: "name", value: $("#name").val() }]
+                                $.post()*/
                             }
                         },
                     }
