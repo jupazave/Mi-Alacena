@@ -147,6 +147,85 @@ class API extends REST {
         $this->response('',204); // If no records "No Content" status
     }
 
+    public function pedidos()
+    {
+        if($this->get_request_method() != "POST"){
+            $this->response('',406);
+        }
+
+        if (!isset($this->_request['name'])) {
+            $name = NULL;
+        }else{
+            $name = $this->_request['name'];
+        }
+
+        if (!isset($this->_request['productos'])) {
+            $productos = NULL;
+        }else{
+            $productos = json_decode($this->_request['productos']);
+        }
+
+        if (!isset($this->_request['email'])) {
+            $email = NULL;
+        }else{
+            $email = $this->_request['email'];
+        }
+
+        $error = false;
+        $errores = array();
+
+        if (is_null($name) OR $name == "" OR $name == "") {
+
+            $error = true;
+
+            $errores[] = "name";
+            
+        }
+
+        if (is_null($email) OR $email == "" OR $email == "") {
+
+            $error = true;
+
+            $errores[] = "email";
+            
+        }
+
+        if ($error) {
+
+            $results = array('status' => false, "errores" => $errores);
+
+
+            $this->response($this->json($results), 200);
+        }
+
+
+        // print_r($productos);
+
+        $prods = "";
+        foreach ($productos as $value) {
+            $prods .= $value->id . ",";
+        }
+
+        $prods = substr($prods, 0, -1);
+
+        $data = array('datetime' => date("Y-m-d H:i:s"), 
+            'ip' => $_SERVER['REMOTE_ADDR'], 
+            "nombre" => $name , 
+            "email" => $email , 
+            "idProductos" => $prods);
+
+        $insert =  $this->db->Insert($data,"pedidos");
+
+        $results = array('status' => true);
+
+
+        $this->response($this->json($results), 200);
+
+
+
+
+    }
+
     //Public method for access api.
     //This method dynmically call the method based on the query string
     public function processApi()
