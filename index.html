@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="es"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html lang="es">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,6 @@
         <title>Mi Alacena</title>
 
         <link href="dist/css/bootstrap.css" rel="stylesheet">
-        <link href="dist/css/bootstrap-theme.css" rel="stylesheet">
         <link href="dist/css/style.css" rel="stylesheet">
         <link href="dist/css/font-awesome.css" rel="stylesheet">
 
@@ -23,6 +23,7 @@
         <script src="dist/js/bootstrap.min.js"></script>
 
         <script src="dist/js/bootbox.min.js"></script>
+        <!-- // <script src="dist/js/icheck.min.js"></script> -->
 
     </head>
 
@@ -63,7 +64,20 @@
 
                     <div class="row">
                         <div class="col-md-8">
-                            <input type="text">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Proporcionanos los siguientes datos para realizar tu pedido:</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Nombre">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control"  placeholder="Email">
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="col-md-4 ">
                              <button id="pagar" class="btn btn-lg btn-primary pull-right"> Continuar </button>
@@ -195,7 +209,7 @@
 
                                 $("#productos").html(html).show("fast");
 
-                                $(".producto-select").click(function () {
+                                $(".product").click(function () {
 
                                     if ($(this).hasClass( "yay" )) {
 

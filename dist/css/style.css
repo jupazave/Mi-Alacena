@@ -76,6 +76,10 @@ h1,h1+p,.prod-tit{
 	margin: 4px 15px 10px 15px;
 }
 
+#pagar {
+	margin-top: 17px;
+}
+
 .estados-wrap label{
 	background-color: #333;
 	color: #FFF;
@@ -104,6 +108,12 @@ h1,h1+p,.prod-tit{
 
 .product{
   margin-bottom: 30px;
+  cursor: pointer;
+
+}
+
+select:after{
+  display: none;
 }
 
 .product-img {
@@ -158,9 +168,6 @@ h1,h1+p,.prod-tit{
 
 .btn-lg {
 	padding: 12px 58px;
-}
-.producto-select{
-    cursor: pointer;
 }
 
 .yay{
