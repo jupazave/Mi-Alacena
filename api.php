@@ -1,12 +1,11 @@
 <?php
+define("COMISION", "1.333333333333");
 
 require_once("./libs/MySQL/class.mysql.php");
 require_once("./libs/REST/class.rest.php");
 
 
 require_once("./libs/EmailTemplate.php");
-
-
 
 
 require './libs/PHPMailer/PHPMailerAutoload.php';
@@ -108,7 +107,7 @@ class API extends REST {
 
             
             $query = $this->db->ExecuteSQL(
-                sprintf("SELECT id, nombre, precio, imagen FROM productos where estado = '%s' and hidden = 0 And precio != 0",
+                sprintf("SELECT id, nombre, (precio)*" . COMISION ." as precio, imagen FROM productos where estado = '%s' and hidden = 0 And precio != 0",
                     mysql_real_escape_string($estado)
                     ));
 
@@ -137,7 +136,7 @@ class API extends REST {
 
                         $productos[] = array(
                             "nombre"=>utf8_encode($value["nombre"]), 
-                            "precio" =>$value["precio"],
+                            "precio" =>ceil ( $value["precio"]),
                             "id" =>$value["id"],
                             "imagen" =>$value["imagen"]);
                             
@@ -234,7 +233,7 @@ class API extends REST {
 
         
 
-        $query =$this->db->Select("productos" , $productos_id, '', "", false, 'OR','id, nombre, precio');
+        $query =$this->db->Select("productos" , $productos_id, '', "", false, 'OR','id, nombre, (precio)*' . COMISION .' as precio');
 
         $productos_email = array();
 
@@ -242,13 +241,15 @@ class API extends REST {
 
         foreach ($query as $item) {
             // $productos_email[]["nombre"] = $item["nombre"];
-            $precio = $item["precio"] * $productos_y_cantidades[$item["id"]];
+            $precio = ceil ( $item["precio"] ) * $productos_y_cantidades[$item["id"]];
 
             $add = array('nombre' => $item["nombre"], "precio" => "$".$precio." MXN", "cantidad" => $productos_y_cantidades[$item["id"]]);
 
             $productos_email[] =  $add;
             $total += $precio;
         }
+
+        $total = ceil ( $total  );
 
         $template = new EmailTemplate($name, $email, $productos_email, $total); 
         

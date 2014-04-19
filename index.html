@@ -94,6 +94,9 @@
 
 
             $("#pagar").click(function () {
+
+                var pagar = $(this);
+                pagar.button('loading');
                 var title_html ="Confirma tu pedido de compra:";
                 var some_html = "";
                 
@@ -152,11 +155,18 @@
                 modalmaker.dialog({
                     message: some_html,
                     title: title_html,
+
+                    onEscape: function() {bootbox.hideAll();},
                     buttons: {
                         success: {
                             label: "¡Mare, Lo quiero!",
-                            className: "btn-success",
+                            className: "btn-success my-btn",
                             callback: function() {
+
+                                var btnModal = $(".my-btn");
+
+                                $(btnModal).attr("data-loading-text","Cargando...");
+                                btnModal.button('loading');
 
                                 productos = new Array();
 
@@ -199,13 +209,15 @@
                                             alert("Hubo un error al enviar tu pedido, porfavor intentalo de nuevo.")
                                         }
 
+                                        btnModal.button("reset");
+
                                         return false;
 
 
                                     }else{
 
 
-
+                                        btnModal.button("reset");
                                         bootbox.hideAll();
 
                                         window.location.href = './gracias.html';
@@ -242,6 +254,8 @@
 
 
                 });
+
+                pagar.button('reset');
 
             });
 
@@ -304,6 +318,10 @@
 
                                 $(".product").click(function () {
 
+                                    
+
+                                    
+
                                     if ($(this).hasClass( "yay" )) {
 
                                         $(this).removeClass("yay");
@@ -311,6 +329,14 @@
                                     }else{
                                         $(this).addClass("yay");
                                     };
+
+                                    if ($(".yay").length == 0) {
+
+                                        $("#pagar").attr("disabled","disabled");
+
+                                    }else{
+                                        $("#pagar").removeAttr("disabled");
+                                    }
                                     
                                 });
 
@@ -325,6 +351,14 @@
                     $("#estados").val(31).change(); //Auto Seleccion de yucatán
                 };
             });
+
+            if ($(".yay").length == 0) {
+
+                $("#pagar").attr("disabled","disabled");
+
+            }else{
+                $("#pagar").removeAttr("disabled");
+            }
 
             
 
