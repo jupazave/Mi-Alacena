@@ -208,7 +208,16 @@ class MySQL {
                     $query .= "`{$key}` LIKE '%{$value}%' {$operand} ";
                 }else{
                     //$query .= '`' . $key . '` = "' . $value . '" ' . $operand . ' ';
-                    $query .= "`{$key}` = '{$value}' {$operand} ";
+                    if (is_array($value)) {
+                        foreach ($value as $key2 => $value2) {
+                            $query .= "`{$key2}` = '{$value2}' {$operand} ";
+                            
+                        }
+                    }else{
+                        $query .= "`{$key}` = '{$value}' {$operand} ";
+
+
+                    }
                 }
             }
             
@@ -225,6 +234,7 @@ class MySQL {
         if($limit != ''){
             $query .= ' LIMIT ' . $limit;
         }
+
         
         return $this->ExecuteSQL($query);
         

@@ -181,7 +181,7 @@
 
                                     if (!data.status) {
                                         
-                                        console.log(data.errores);
+                                        // console.log(data.errores);
 
                                         if(data.errores.indexOf("name") != -1) { 
                                             $("#name").closest(".form-group").addClass("has-error");
@@ -195,13 +195,20 @@
                                             $("#email").closest(".form-group").removeClass("has-error");
                                         }
 
+                                        if(data.errores.indexOf("mail") != -1) { 
+                                            alert("Hubo un error al enviar tu pedido, porfavor intentalo de nuevo.")
+                                        }
 
                                         return false;
 
 
                                     }else{
 
+
+
                                         bootbox.hideAll();
+
+                                        window.location.href = './gracias.html';
 
                                     };
 
@@ -277,12 +284,14 @@
 
                                     id = index +1;
 
-                                    html += "<div class=\"col-md-4 text-center product\"";
+                                    html += "<div class=\"col-md-4 text-center\">";
+                                    html += "<div class=\"product\"";
                                     html += "data-precio=\"" + value.precio + "\" data-nombre=\"" + value.nombre + "\" data-id=\"" + value.id + "\">";
                                     html += "<div class=\"img-thumbnail product-img\">";
                                     html += "<img class=\"img-responsive\" src=\"http://mialacena.mx/images/" + value.imagen + "\"></div>";
                                     html += "<h4 class=\"prod-titulo\">" + value.nombre + "</h4>";
                                     html += "<h5 class=\"prod-precio\">$" + value.precio + " MXN</h5>";
+                                    html += "</div>";
                                     html += "</div>";
 
                                     primera = true;

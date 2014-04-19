@@ -1,7 +1,15 @@
 <?php
 
-require_once("class.rest.php");
-require_once("class.mysql.php");
+require_once("./libs/MySQL/class.mysql.php");
+require_once("./libs/REST/class.rest.php");
+
+
+require_once("./libs/EmailTemplate.php");
+
+
+
+
+require './libs/PHPMailer/PHPMailerAutoload.php';
 
 // include ("helpers.php");
 
@@ -100,7 +108,7 @@ class API extends REST {
 
             
             $query = $this->db->ExecuteSQL(
-                sprintf("SELECT id, nombre, precio, imagen FROM productos where estado = '%s' and hidden = 0",
+                sprintf("SELECT id, nombre, precio, imagen FROM productos where estado = '%s' and hidden = 0 And precio != 0",
                     mysql_real_escape_string($estado)
                     ));
 
@@ -201,22 +209,97 @@ class API extends REST {
 
         // print_r($productos);
 
-        $prods = "";
+        $productos_coma = "";
+        $cantidades_coma = "";
+        $productos_id = array();
+        $productos_y_cantidades = array();
+
+
         foreach ($productos as $value) {
-            $prods .= $value->id . ",";
+            $productos_id[] = array('id' => $value->id);
+            $productos_y_cantidades[$value->id] = $value->cantidad;
+            $productos_coma .= $value->id . ",";
+            $cantidades_coma .= $value->cantidad . ",";
         }
 
-        $prods = substr($prods, 0, -1);
+        $productos_coma = substr($productos_coma, 0, -1);
+        $cantidades_coma = substr($cantidades_coma, 0, -1);
 
         $data = array('datetime' => date("Y-m-d H:i:s"), 
             'ip' => $_SERVER['REMOTE_ADDR'], 
             "nombre" => $name , 
             "email" => $email , 
-            "idProductos" => $prods);
+            "idProductos" => $productos_coma,
+            "cantidadesProductos"=>$cantidades_coma);
 
-        $insert =  $this->db->Insert($data,"pedidos");
+        
 
-        $results = array('status' => true);
+        $query =$this->db->Select("productos" , $productos_id, '', "", false, 'OR','id, nombre, precio');
+
+        $productos_email = array();
+
+        $total = 0;
+
+        foreach ($query as $item) {
+            // $productos_email[]["nombre"] = $item["nombre"];
+            $precio = $item["precio"] * $productos_y_cantidades[$item["id"]];
+
+            $add = array('nombre' => $item["nombre"], "precio" => "$".$precio." MXN", "cantidad" => $productos_y_cantidades[$item["id"]]);
+
+            $productos_email[] =  $add;
+            $total += $precio;
+        }
+
+        $template = new EmailTemplate($name, $email, $productos_email, $total); 
+        
+
+
+        $mail = new PHPMailer;
+
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = 'hola@mialacena.mx';                            // SMTP username
+        $mail->Password = 'Abeja2014!';                           // SMTP password
+        $mail->SMTPSecure = 'tls'; 
+        $mail->Port       = 587;                            // Enable encryption, 'ssl' also accepted
+
+        $mail->From = 'hola@mialacena.mx';
+        $mail->FromName = 'MiAlacena.mx';
+        $mail->addAddress($email, $name);  // Add a recipient
+        $mail->addBCC('novelo_novelo@hotmail.com');
+        $mail->addBCC('jegs87@gmail.com');
+        $mail->addBCC('jupazave@gmail.com');
+
+        $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+        $mail->isHTML(true);                                  // Set email format to HTML
+
+        $mail->Subject = 'Datos para concretar tu compra';
+        $mail->Body    = $template->getEmailHTML();
+        $mail->AltBody = $template->getEmail();
+
+        if(!$mail->send()) {
+
+           $data["enviado"]  = 0;
+
+           $insert =  $this->db->Insert($data,"pedidos");
+
+            $results = array('status' => false, "errores" =>array("mail"));
+
+
+        }else{
+
+            $data["enviado"]  = 1;
+
+            $insert =  $this->db->Insert($data,"pedidos");
+
+            $results = array('status' => true);
+
+    
+        }
+
+
+        
 
 
         $this->response($this->json($results), 200);
