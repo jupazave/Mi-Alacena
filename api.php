@@ -182,7 +182,7 @@ class API extends REST {
             
         }
 
-        if (is_null($email) OR $email == "" OR $email == "") {
+        if (is_null($email) OR $email == "" OR $email == "" OR !(filter_var($email, FILTER_VALIDATE_EMAIL))) {
 
             $error = true;
 
