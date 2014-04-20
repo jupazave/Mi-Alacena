@@ -71,9 +71,9 @@
                                     padding-right: 3px"><b>Total: $' . $this->total . ' MXN</b></div>
 
                     </div>
-                    <p><b>Comun&iactue;cate con nosotros:</b></p>
+                    <p><b>Comun&iacute;cate con nosotros:</b></p>
                     <div style="margin-left:12px">
-                        Email: hola@mialmacen.mx<br>
+                        Email: hola@mialacena.mx<br>
                         Celular: 9993 38 86 91
                     </div><br>
                     <p>MiAlacena.mx</p>
@@ -81,7 +81,7 @@
                 </div>
 
                 <div style="position:relative">
-                    <img style="position: absolute; right: -6; bottom: -24" src="footer.png">
+                    <img style="position: absolute; right: -6; bottom: -24" src="http://bit.ly/1i0UW8H">
                 </div>
 
             </div>
@@ -91,7 +91,7 @@
 
             $this->template .= "\nTotal: $".$this->total." MXN\n
                 \n
-                Comun&iactue;cate con nosotros:\n
+                Comunícate con nosotros:\n
                 Email: hola@mialacena.mx\n
                 Celular: 9993 38 86 91\n
                 \n

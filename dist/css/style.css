@@ -1,6 +1,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-bottom: 120px;
+  /* padding-bottom: 120px; */
   font-family: 'Open Sans', sans-serif;
 
 }
@@ -30,22 +30,42 @@ h1,h1+p,.prod-tit{
   padding-right: 40px;
 }
 
+.gracias{
+  padding-top: 30px;
+  color: gray;
+
+  line-height: 20px;
+}
+
+
+.btn-primary,.btn-primary[disabled],.btn-primary:hover,.btn-primary:focus{
+  background-color: #E94C43;
+  border-color: #E94C43;
+}
+
+footer{
+  height: 100px;
+}
 
 
 .wrap{
   /*min-height: 800px;*/
-  background-color:#EBEFF4;  
+
+  background-size: 100%;
+
+  background-color: #F6ED9A;
+/*  background-color:#EBEFF4;  
   background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEFF4), color-stop(1, #FFFFFF));
   background-image:-webkit-linear-gradient(#EBEFF4, #FFFFFF);
   background-image:-moz-linear-gradient(top, #EBEFF4, #FFFFFF);
   background-image:-o-linear-gradient(top, #EBEFF4, #FFFFFF);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#EBEFF4', EndColorStr='#FFFFFF');
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#EBEFF4', EndColorStr='#FFFFFF');*/
 
 }
 
 .jumbotron{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  /*margin-top: 50px;*/
+  /*margin-bottom: 50px;*/
   background: none;
 }
 
@@ -237,4 +257,8 @@ select.form-control.items-producto{
 .modal-footer {
   padding: 21px 19px 20px;
   margin-top: 2px; 
+}
+
+body{
+  background: white;
 }

@@ -239,36 +239,61 @@ class API extends REST {
 
         $total = 0;
 
-        foreach ($query as $item) {
-            // $productos_email[]["nombre"] = $item["nombre"];
-            $precio = ceil ( $item["precio"] ) * $productos_y_cantidades[$item["id"]];
+        if (isset($query['id'])) {
 
-            $add = array('nombre' => $item["nombre"], "precio" => "$".$precio." MXN", "cantidad" => $productos_y_cantidades[$item["id"]]);
+            // $productos_email[]["nombre"] = $item["nombre"];
+            $precio = ceil ( $query["precio"] ) * $productos_y_cantidades[$query["id"]];
+
+            $add = array('nombre' => utf8_encode($query["nombre"]), "precio" => "$".$precio." MXN", "cantidad" => $productos_y_cantidades[$query["id"]]);
 
             $productos_email[] =  $add;
+                
             $total += $precio;
+
+        }else{
+
+            foreach ($query as $item) {
+
+                // $productos_email[]["nombre"] = $item["nombre"];
+                $precio = ceil ( $item["precio"] ) * $productos_y_cantidades[$item["id"]];
+
+                $add = array('nombre' => utf8_encode($item["nombre"]), "precio" => "$".$precio." MXN", "cantidad" => $productos_y_cantidades[$item["id"]]);
+
+                $productos_email[] =  $add;
+                
+                $total += $precio;
+
+            }
+
         }
 
-        $total = ceil ( $total  );
+
+        // $total = ceil ( $total  );
+
+
+        // print_r($productos_email);
 
         $template = new EmailTemplate($name, $email, $productos_email, $total); 
         
 
-
+            
         $mail = new PHPMailer;
+        $ownMail = new PHPMailer;
 
-        $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.gmail.com';  // Specify main and backup server
-        $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'hola@mialacena.mx';                            // SMTP username
-        $mail->Password = 'Abeja2014!';                           // SMTP password
-        $mail->SMTPSecure = 'tls'; 
-        $mail->Port       = 587;                            // Enable encryption, 'ssl' also accepted
+        $mail->IsSMTP(); // Using SMTP.
+        $mail->CharSet = 'utf-8';
+        // $mail->SMTPDebug = 2; // Enables SMTP debug information - SHOULD NOT be active on production servers!
+        $mail->SMTPAuth = false; // Enables SMTP authentication.
+        $mail->Host = "relay-hosting.secureserver.net"; // SMTP server host.
+
+        $mail->AddReplyTo('hola@mialacena.mx','MiAlacena.mx');
+        $mail->SetFrom('hola@mialacena.mx','MiAlacena.mx');
 
         $mail->From = 'hola@mialacena.mx';
         $mail->FromName = 'MiAlacena.mx';
         $mail->addAddress($email, $name);  // Add a recipient
         $mail->addBCC('novelo_novelo@hotmail.com');
+        $mail->addBCC('hola@mialacena.mx');
         $mail->addBCC('jegs87@gmail.com');
         $mail->addBCC('jupazave@gmail.com');
 
@@ -281,12 +306,11 @@ class API extends REST {
 
         if(!$mail->send()) {
 
-           $data["enviado"]  = 0;
+            $data["enviado"]  = 0;
 
-           $insert =  $this->db->Insert($data,"pedidos");
+            $insert =  $this->db->Insert($data,"pedidos");
 
-            $results = array('status' => false, "errores" =>array("mail"));
-
+            $results = array('status' => false, "errores" =>array("mail"), "more" => $insert);
 
         }else{
 
@@ -294,19 +318,11 @@ class API extends REST {
 
             $insert =  $this->db->Insert($data,"pedidos");
 
-            $results = array('status' => true);
+            $results = array('status' => true, "more" => $insert);
 
-    
         }
 
-
-        
-
-
         $this->response($this->json($results), 200);
-
-
-
 
     }
 
