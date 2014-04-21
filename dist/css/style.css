@@ -3,6 +3,7 @@ body {
   /* padding-bottom: 120px; */
   font-family: 'Open Sans', sans-serif;
 
+
 }
 
 h1,h1+p,.prod-tit{
@@ -25,7 +26,7 @@ h1,h1+p,.prod-tit{
 
 .main-content{
   padding-top: 30px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.95);
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -79,9 +80,15 @@ footer{
 }
 
 .wrap{
-  background-color:#F6ED9A;  
+  background-image: url('../img/bg.png');
+  background-color: #F6ED9A;
   /*background-color:transparent;  */
   padding-bottom: 30px;
+}
+
+.opacity {
+  filter:alpha(opacity=40); /* For IE8 and earlier */
+  background-color:#F6ED9A;  
 }
 
 .jumbotron{
@@ -278,8 +285,4 @@ select.form-control.items-producto{
 .modal-footer {
   padding: 21px 19px 20px;
   margin-top: 2px; 
-}
-
-body{
-  background: white;
 }
