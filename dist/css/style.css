@@ -2,22 +2,30 @@
 body {
   /* padding-bottom: 120px; */
   font-family: 'Open Sans', sans-serif;
+  color: #271721;
 
 
 }
 
-h1,h1+p,.prod-tit{
-  font-family: 'Shadows Into Light Two', 'cursive';
+html{
+  height: 100%;
+}
+body, body .gracias {
+  min-height: 100%;
 }
 
-.jls * h1{
 
-  font-family: 'Fjalla One', sans-serif !important;
-
+body {
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
 }
 
-.jls *:not(.fa) {
-    font-family: 'Cantarell', sans-serif !important;
+@-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
 }
 
 .container{
@@ -55,6 +63,10 @@ footer{
   padding-bottom: 20px;
 }
 
+div.product {
+margin: 0 auto;
+}
+
 
 .wrap2{
   display:none;
@@ -86,9 +98,16 @@ footer{
   padding-bottom: 30px;
 }
 
-.opacity {
-  filter:alpha(opacity=40); /* For IE8 and earlier */
-  background-color:#F6ED9A;  
+body .gracias{
+
+  background-color:#F6ED9A;
+
+}
+
+
+.gracias{
+  padding-bottom: 0!important;
+  width: 100%;
 }
 
 .jumbotron{
@@ -133,7 +152,7 @@ footer{
 }
 
 .estados-wrap label{
-	background-color: #333;
+	background-color: #271721;
 	color: #FFF;
 	width: 100%;
 	text-align: left;
