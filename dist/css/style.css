@@ -131,7 +131,8 @@ body .gracias{
 }
 
 .product:hover {
-  background-color: #DDD;
+  background-color: #AD5159;
+  color: #FFF;
 }
 
 .estados-wrap {
@@ -237,12 +238,12 @@ body .gracias{
 }
 
 .yay{
-    background-color: #999;
+    background-color: #6D1F28;
     color: #FFF;
 }
 
 .yay:hover {
-  background-color: #999;
+  background-color: #6D1F28;
   color: #FFF;
 }
 
