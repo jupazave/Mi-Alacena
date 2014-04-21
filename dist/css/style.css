@@ -128,6 +128,10 @@ body .gracias{
   padding-right: 16px;
   max-width: 290px;
   min-height: 370px;
+  -webkit-transition: all 0.11s ease-out;
+  -moz-transition: all 0.11s ease-out;
+  -ms-transition: all 0.11s ease-out;
+  -o-transition: all 0.11s ease-out;
 }
 
 .product:hover {
@@ -189,12 +193,12 @@ body .gracias{
 	position: relative;
 	/* width: auto; */
 	/* max-height: 200px; */
-	background: #FFF;
 	/* margin: 40px auto; */
 	margin-bottom: 8px;
 	padding: 20px;
   position: relative;
   /*max-width: 250px;*/
+  background-color: #FEFDF2
 }
 
 .product-img:before {
@@ -206,7 +210,6 @@ body .gracias{
   width: 50%;
   top: 80%;
   max-width:300px;
-  background: #777;
   -webkit-box-shadow: 0 15px 10px #777;
   -moz-box-shadow: 0 15px 10px #777;
   box-shadow: 0 15px 10px #777;
