@@ -281,6 +281,15 @@ select.form-control.items-producto {
   /*background-color: #F28D1A;*/
 }
 
+.faqs h3{
+    color: #F6ED9A;
+
+}
+
+.panel-title{
+    text-align: center;
+}
+
 
 footer {
   /*margin-top: 30px;*/
