@@ -103,10 +103,11 @@ body {
 
 .estados-wrap {
     background-color: rgb(245, 245, 245);
+    margin-top: 20px;
 }
 
 .estados-wrap label {
-    background-color: #271721;
+    background-color: #EA4D43;
     color: #FFF;
     width: 100%;
     text-align: left;
@@ -303,7 +304,7 @@ footer {
 
 .panel {
     border: none;
-    background-color: #FEFDF2;
+    background-color: #F5F5F5;
 }
 
 .panel .panel-heading {
