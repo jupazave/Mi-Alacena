@@ -281,8 +281,11 @@ select.form-control.items-producto {
   /*background-color: #F28D1A;*/
 }
 
-.faqs h3{
+.faqs h1,
+.faqs h2,
+.faqs h3 {
     color: #F6ED9A;
+    margin: 50px 0;
 
 }
 
@@ -296,4 +299,15 @@ footer {
     display: none;
     height: 100px;
     background-color: #6B1D2A;
+}
+
+.panel {
+    border: none;
+    background-color: #FEFDF2;
+}
+
+.panel .panel-heading {
+    background-color: #EA4D43;
+    border: none;
+    color: #FEFDF2;
 }
