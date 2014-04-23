@@ -80,10 +80,6 @@
 
                 </div>
 
-                <div style="position:relative">
-                    <img style="position: absolute; right: -6; bottom: -24" src="http://bit.ly/1i0UW8H">
-                </div>
-
             </div>
 
             </body>
