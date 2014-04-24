@@ -37,7 +37,9 @@
             
             $this->templateHTML = '<html><head></head><body>
 
-                <div style="width: 550px;margin: 0 auto;padding-bottom: 10px"></div>
+                <div style="width: 550px;margin: 0 auto;padding-bottom: 10px">
+                    <img src="http://bit.ly/1hpRoMG">
+                </div>
 
                 <div style="width: 540px;margin: 0 auto 20px auto;border: 1px solid #EEE;border-bottom: 4px solid #EEE;padding: 25px 5px 20px 5px;
                             color: #444444;">
