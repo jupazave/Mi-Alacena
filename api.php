@@ -329,19 +329,19 @@ class API extends REST {
     public function sorteo()
     {
         if($this->get_request_method() != "POST"){
-            header("Location: http://MiAlacena.mx/sorteo-gracias.html")
+            header("Location: http://MiAlacena.mx/sorteo.html");
         }
 
-        if (!isset($this->_request['name'])) {
-            $name = NULL;
+        if (!isset($this->_request['nombre'])) {
+            $nombre = NULL;
         }else{
-            $name = $this->_request['name'];
+            $nombre = $this->_request['nombre'];
         }
 
-        if (!isset($this->_request['productos'])) {
-            $productos = NULL;
+        if (!isset($this->_request['estado'])) {
+            $estado = NULL;
         }else{
-            $productos = json_decode($this->_request['productos']);
+            $estado = $this->_request['estado'];
         }
 
         if (!isset($this->_request['email'])) {
@@ -350,151 +350,25 @@ class API extends REST {
             $email = $this->_request['email'];
         }
 
-        $error = false;
-        $errores = array();
-
-        if (is_null($name) OR $name == "" OR $name == "") {
-
-            $error = true;
-
-            $errores[] = "name";
-            
+        if (!isset($this->_request['edad'])) {
+            $edad = NULL;
+        }else{
+            $edad = $this->_request['edad'];
         }
 
-        if (is_null($email) OR $email == "" OR $email == "" OR !(filter_var($email, FILTER_VALIDATE_EMAIL))) {
-
-            $error = true;
-
-            $errores[] = "email";
-            
-        }
-
-        if ($error) {
-
-            $results = array('status' => false, "errores" => $errores);
-
-
-            $this->response($this->json($results), 200);
-        }
-
-
-        // print_r($productos);
-
-        $productos_coma = "";
-        $cantidades_coma = "";
-        $productos_id = array();
-        $productos_y_cantidades = array();
-
-
-        foreach ($productos as $value) {
-            $productos_id[] = array('id' => $value->id);
-            $productos_y_cantidades[$value->id] = $value->cantidad;
-            $productos_coma .= $value->id . ",";
-            $cantidades_coma .= $value->cantidad . ",";
-        }
-
-        $productos_coma = substr($productos_coma, 0, -1);
-        $cantidades_coma = substr($cantidades_coma, 0, -1);
 
         $data = array('datetime' => date("Y-m-d H:i:s"), 
             'ip' => $_SERVER['REMOTE_ADDR'], 
-            "nombre" => $name , 
-            "email" => $email , 
-            "idProductos" => $productos_coma,
-            "cantidadesProductos"=>$cantidades_coma);
-
-        
-
-        $query =$this->db->Select("productos" , $productos_id, '', "", false, 'OR','id, nombre, (precio)*' . COMISION .' as precio');
-
-        $productos_email = array();
-
-        $total = 0;
-
-        if (isset($query['id'])) {
-
-            // $productos_email[]["nombre"] = $item["nombre"];
-            $precio = ceil ( $query["precio"] ) * $productos_y_cantidades[$query["id"]];
-
-            $add = array('nombre' => utf8_encode($query["nombre"]), "precio" => "$".$precio." MXN", "cantidad" => $productos_y_cantidades[$query["id"]]);
-
-            $productos_email[] =  $add;
-                
-            $total += $precio;
-
-        }else{
-
-            foreach ($query as $item) {
-
-                // $productos_email[]["nombre"] = $item["nombre"];
-                $precio = ceil ( $item["precio"] ) * $productos_y_cantidades[$item["id"]];
-
-                $add = array('nombre' => utf8_encode($item["nombre"]), "precio" => "$".$precio." MXN", "cantidad" => $productos_y_cantidades[$item["id"]]);
-
-                $productos_email[] =  $add;
-                
-                $total += $precio;
-
-            }
-
-        }
+            "nombre" => $nombre , 
+            "email" => $email ,
+            "edad" => $edad ,
+            "estado" => $estado ,
+            );
 
 
-        // $total = ceil ( $total  );
+        $insert =  $this->db->Insert($data,"sorteo");
 
-
-        // print_r($productos_email);
-
-        $template = new EmailTemplate($name, $email, $productos_email, $total); 
-        
-
-            
-        $mail = new PHPMailer;
-        $ownMail = new PHPMailer;
-
-        $mail->IsSMTP(); // Using SMTP.
-        $mail->CharSet = 'utf-8';
-        // $mail->SMTPDebug = 2; // Enables SMTP debug information - SHOULD NOT be active on production servers!
-        $mail->SMTPAuth = false; // Enables SMTP authentication.
-        $mail->Host = "relay-hosting.secureserver.net"; // SMTP server host.
-
-        $mail->AddReplyTo('hola@mialacena.mx','MiAlacena.mx');
-        $mail->SetFrom('hola@mialacena.mx','MiAlacena.mx');
-
-        $mail->From = 'hola@mialacena.mx';
-        $mail->FromName = 'MiAlacena.mx';
-        $mail->addAddress($email, $name);  // Add a recipient
-        $mail->addBCC('novelo_novelo@hotmail.com');
-        $mail->addBCC('hola@mialacena.mx');
-        $mail->addBCC('jegs87@gmail.com');
-        $mail->addBCC('jupazave@gmail.com');
-
-        $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-        $mail->isHTML(true);                                  // Set email format to HTML
-
-        $mail->Subject = 'Datos para concretar tu compra';
-        $mail->Body    = $template->getEmailHTML();
-        $mail->AltBody = $template->getEmail();
-
-        if(!$mail->send()) {
-
-            $data["enviado"]  = 0;
-
-            $insert =  $this->db->Insert($data,"pedidos");
-
-            $results = array('status' => false, "errores" =>array("mail"), "more" => $insert);
-
-        }else{
-
-            $data["enviado"]  = 1;
-
-            $insert =  $this->db->Insert($data,"pedidos");
-
-            $results = array('status' => true, "more" => $insert);
-
-        }
-
-        $this->response($this->json($results), 200);
+        header("Location: http://MiAlacena.mx/sorteo-gracias.html");
 
     }
 
