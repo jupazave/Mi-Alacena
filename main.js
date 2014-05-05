@@ -53,6 +53,8 @@ $(document).ready(function(){
 
         });
 
+        total += 160;
+
         var context = {productos: productosTemplate, total: total};
 
         bootbox.dialog({
@@ -170,6 +172,8 @@ $(document).ready(function(){
             $(".precio-list").each(function (index, value){
                 total += parseInt($(value).html().split("$")[1].split("MXN")[0]);
             });
+
+            total += 160;
 
             $(".total").html("Total: $" + total + "MXN");
 
