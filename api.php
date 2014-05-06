@@ -328,6 +328,7 @@ class API extends REST {
 
     public function sorteo()
     {
+        $urlDestino = "http://MiAlacena.mx/sorteo-gracias.html";
         if($this->get_request_method() != "POST" OR $this->get_request_method() == "GET"){
             header("Location: http://MiAlacena.mx/sorteo.html");
         }
@@ -372,7 +373,7 @@ class API extends REST {
 
         $insert =  $this->db->Insert($data,"sorteo");
 
-        header("Location: http://MiAlacena.mx/sorteo-gracias.html");
+        header("Location: " .$urlDestino);
 
     }
 
