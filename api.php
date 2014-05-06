@@ -107,7 +107,7 @@ class API extends REST {
 
             
             $query = $this->db->ExecuteSQL(
-                sprintf("SELECT id, nombre, (precio)*" . COMISION ." as precio, imagen FROM productos where estado = '%s' and hidden = 0 And precio != 0",
+                sprintf("SELECT id, nombre, (precio)*" . COMISION ." as precio, imagen FROM productos where estado = '%s' and hidden = 0 And precio != 0 ORDER By id",
                     mysql_real_escape_string($estado)
                     ));
 
