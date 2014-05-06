@@ -328,7 +328,7 @@ class API extends REST {
 
     public function sorteo()
     {
-        if($this->get_request_method() != "POST"){
+        if($this->get_request_method() != "POST" OR $this->get_request_method() == "GET"){
             header("Location: http://MiAlacena.mx/sorteo.html");
         }
 
