@@ -356,6 +356,10 @@ class API extends REST {
             $edad = $this->_request['edad'];
         }
 
+        if (is_null($nombre) OR is_null($estado) OR is_null($email) OR is_null($edad)) {
+            header("Location: http://MiAlacena.mx/sorteo.html");
+        }
+
 
         $data = array('datetime' => date("Y-m-d H:i:s"), 
             'ip' => $_SERVER['REMOTE_ADDR'], 
