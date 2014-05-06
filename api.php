@@ -335,19 +335,19 @@ class API extends REST {
         if (!isset($this->_request['nombre'])) {
             $nombre = NULL;
         }else{
-            $nombre = $this->_request['nombre'];
+            $nombre = utf8_encode($this->_request['nombre']);
         }
 
         if (!isset($this->_request['estado'])) {
             $estado = NULL;
         }else{
-            $estado = $this->_request['estado'];
+            $estado = utf8_encode($this->_request['estado']);
         }
 
         if (!isset($this->_request['email'])) {
-            $email = NULL;
+            $email = 0;
         }else{
-            $email = $this->_request['email'];
+            $email = utf8_encode($this->_request['email']);
         }
 
         if (!isset($this->_request['edad'])) {
