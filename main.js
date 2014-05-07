@@ -33,6 +33,8 @@ $(document).ready(function(){
 
     $("#pagar").click(function () {
 
+        $.get("api.php?rquest=clickContinuar", function(template) {});
+
         var pagar = $(this);
 
         pagar.attr("data-loading-text","Cargando...").button('loading');

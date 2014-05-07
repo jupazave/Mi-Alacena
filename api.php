@@ -377,6 +377,18 @@ class API extends REST {
 
     }
 
+    public function clickContinuar()
+    {
+
+        $data = array('datetime' => date("Y-m-d H:i:s"), 
+            'ip' => $_SERVER['REMOTE_ADDR'], 
+            );
+        $insert =  $this->db->Insert($data,"click");
+
+
+
+    }
+
     //Public method for access api.
     //This method dynmically call the method based on the query string
     public function processApi()
