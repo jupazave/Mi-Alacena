@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 
     var myTemplateModal = "template/modal-body.html";
 
@@ -186,7 +186,7 @@ $(document).ready(function(){
     });
 
 
-    $.post("api.php?rquest=getEstados",null,function(data){
+    $.get("/estados",function(data){
 
         if (data.status) {
 
@@ -194,11 +194,11 @@ $(document).ready(function(){
 
             var html = "";
 
-            $(estados).each(function (index , value) {
+            $(estados).each(function (value) {
 
                 id = index +1;
 
-                html = html + "<option value=\"" + id + "\">" + value + "</option>";
+                html = html + "<option value=\"" + value.id + "\">" + value.name + "</option>";
             });
 
             $("#estados").html(html);
@@ -272,7 +272,7 @@ $(document).ready(function(){
 
 });
 
-
+*/
 
 $(function() {
     $('a[href*=#]:not([href=#]).ani-link').click(function() {
