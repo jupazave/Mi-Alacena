@@ -1,0 +1,22 @@
+{
+  "name": "Mi Alacena",
+  "version": "1.0",
+  "authors": [
+    "Juan Pablo Zamora <jupazave@gmail.com>"
+  ],
+  "description": "Mi Alacena",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "font-awesome-bower": "~4.1.0"
+  }
+}

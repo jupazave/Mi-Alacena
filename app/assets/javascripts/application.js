@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+// Desde Bower
+//= require bootstrap/dist/js/bootstrap
