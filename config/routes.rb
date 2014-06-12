@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root 'inicio#index'
 
   # Example of regular route:
-  get 'inicio/json' => 'inicio#json'
+  # get 'inicio/json' => 'inicio#json'
+  post 'productos' => 'inicio#productos'
   get 'estados' => 'inicio#estados'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

@@ -1,12 +1,11 @@
-/*$(document).ready(function(){
+var myTemplateModal = "template/modal-body.html";
 
-    var myTemplateModal = "template/modal-body.html";
+var myTemplateProducto = "template/producto.html";
 
-    var myTemplateProducto = "template/producto.html";
+var myTemplateSinProducto = "template/sin-productos.html";
 
-    var myTemplateSinProducto = "template/sin-productos.html";
+$(document).ready(function(){
     
-
     $.get(myTemplateProducto, function(template) {
 
         var source = template;
@@ -30,6 +29,8 @@
         myTemplateSinProducto = source;
 
     });
+
+    /*
 
     $("#pagar").click(function () {
 
@@ -159,6 +160,8 @@
             }
         });
 
+        */
+
         $(".items-producto").change(function () {
 
             id = $(this).attr("id").split("cantidad_")[1];
@@ -186,80 +189,6 @@
     });
 
 
-    $.get("/estados",function(data){
-
-        if (data.status) {
-
-            var estados = data.data;
-
-            var html = "";
-
-            $(estados).each(function (value) {
-
-                id = index +1;
-
-                html = html + "<option value=\"" + value.id + "\">" + value.name + "</option>";
-            });
-
-            $("#estados").html(html);
-
-            // $("#estados").val(31).trigger("change");
-
-            $("#estados").change(function() {
-
-                $("#productos").hide("fast");
-
-                var id_estado = $( this ).val();
-
-                $.post("api.php?rquest=getProductos",{estado : id_estado},function(data){
-                            
-                    if (data.status) {
-                                
-                        productos = data.data;
-
-                        productos = {productos: productos};
-
-                        $("#productos").html(myTemplateProducto(productos)).show("fast");
-
-                        $(".product").click(function () {
-
-                            if ($(this).hasClass( "yay" )) {
-
-                                $(this).removeClass("yay");
-
-                            }else{
-
-                                $(this).addClass("yay");
-                            };
-
-                            if ($(".yay").length == 0) {
-
-                                $("#pagar").attr("disabled","disabled");
-
-                            }else{
-
-                                $("#pagar").removeAttr("disabled");
-
-                            }
-
-                        });
-
-                    }else{
-
-                        $("#productos").html(myTemplateSinProducto).show("fast");
-
-                    };
-
-                });
-                        
-            }); // Check input( $( this ).val() ) for validity here
-
-            $("#estados").val(31).change(); //Auto Seleccion de yucatán
-
-        };
-
-    });
-
     if ($(".yay").length == 0) {
 
         $("#pagar").attr("disabled","disabled");
@@ -272,7 +201,7 @@
 
 });
 
-*/
+
 
 $(function() {
     $('a[href*=#]:not([href=#]).ani-link').click(function() {
