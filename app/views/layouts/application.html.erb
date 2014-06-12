@@ -6,13 +6,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Envíos a todo México de productos locales auténticos de cada Estado.">
+    <meta name="author" content="MiAlacena">
+
+    <%= favicon_link_tag 'favicon.ico' %>
 
     <!-- for Facebook -->          
     <meta property="og:title" content="MiAlacena.mx" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="http://MiAlacena.mx/dist/img/logo-f-fb.jpg" />
+    <meta property="og:image" content="<%= asset_url "marco.png" %>" />
     <meta property="og:url" content="http://MiAlacena.mx/" />
     <meta property="og:description" content="Envíos a todo México de productos locales auténticos de cada Estado." />
 
@@ -20,12 +22,11 @@
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content="MiAlacena.mx" />
 	<meta name="twitter:description" content="Envíos a todo México de productos locales auténticos de cada Estado." />
-	<meta name="twitter:image" content="http://MiAlacena.mx/dist/img/logo-f-fb.jpg" />
+	<meta name="twitter:image" content="<%= asset_url "marco.png" %>" />
 
 	<title>Mi Alacena</title>
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' %>
   	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   	<%= csrf_meta_tags %>

@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.1.1",
-    "font-awesome-bower": "~4.1.0"
+    "font-awesome-bower": "~4.1.0",
+    "angular" : "~1.2.17"
   }
 }

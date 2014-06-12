@@ -18,3 +18,4 @@
 
 // Desde Bower
 //= require bootstrap/dist/js/bootstrap
+//= require angular/angular
