@@ -160,7 +160,7 @@ $(document).ready(function(){
             }
         });
 
-        */
+        
 
         $(".items-producto").change(function () {
 
@@ -186,7 +186,7 @@ $(document).ready(function(){
 
         pagar.button('reset');
 
-    });
+    }); */
 
 
     if ($(".yay").length == 0) {

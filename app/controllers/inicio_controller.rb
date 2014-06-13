@@ -17,11 +17,19 @@ class InicioController < ApplicationController
 
   	def productos
 
-  		my_params = productos_params(params)
+  		if request.xhr?
 
-  		my_params[:estado_id] = my_params[:estado_id].to_i
+  			my_params = productos_params(params)
 
-		render :json => Productos.all.find_by(my_params)
+  			my_params[:estado_id] = my_params[:estado_id].to_i
+
+			  render :json => Productos.all.where(my_params) # Limitar por estado
+				
+		  else
+				
+			 render :json => {}
+
+  		end
 
   	end
 

@@ -12,27 +12,19 @@ $(document).ready(function(){
 
             });
 
-            
-
             // $("#estados").val(31).trigger("change");
-
             
-
             $("#estados").change(function() {
 
                 $("#productos").hide("fast");
 
                 var id_estado = $( this ).val();
 
-                $.post("productos",{estado_id : id_estado},function(data){
-
-                    console.log(data)
+                $.post("productos",{estado_id : parseInt( id_estado ) },function(data){
                             
-                    if (data.status) {
+                    if (data.length > 0) {
                                 
-                        productos = data.data;
-
-                        productos = {productos: productos};
+                        productos = {productos: data};
 
                         $("#productos").html(myTemplateProducto(productos)).show("fast");
 
@@ -68,8 +60,6 @@ $(document).ready(function(){
                 });
                         
             }); // Check input( $( this ).val() ) for validity here
-
-            
 
             //$("#estados").val(31).change(); //Auto Seleccion de yucatán
 
