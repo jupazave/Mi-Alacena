@@ -1,6 +1,6 @@
 class Productos < ActiveRecord::Base
 
-	belongs_to :estado
-  	validates_presence_of :estado_id
+	belongs_to :estados
+  	validates_presence_of :estados_id
   	
 end

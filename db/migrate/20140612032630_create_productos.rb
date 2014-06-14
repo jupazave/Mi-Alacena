@@ -4,7 +4,7 @@ class CreateProductos < ActiveRecord::Migration
     	t.string :name, null: false, default: ""
     	t.string :image, null: false, default: ""
     	t.string :price, null: false, default: ""
-    	t.integer :estado_id
+    	t.integer :estados_id
       	t.timestamps
     end
   end

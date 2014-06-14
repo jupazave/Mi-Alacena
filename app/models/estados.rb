@@ -1,4 +1,4 @@
 class Estados < ActiveRecord::Base
 
-	has_many :productos
+	#has_many :producto
 end
