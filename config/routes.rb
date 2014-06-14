@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # get 'inicio/json' => 'inicio#json'
   post 'productos' => 'inicio#productos'
   get 'estados' => 'inicio#estados'
+  get 'click' => 'inicio#contabilizar_click'
+  post 'pedido' => 'inicio#hacer_pedido'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

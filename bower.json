@@ -19,6 +19,7 @@
     "bootstrap": "~3.1.1",
     "font-awesome-bower": "~4.1.0",
     "angular" : "~1.2.17",
-    "handlebars": "2.0.0-alpha.4"
+    "handlebars" : "2.0.0-alpha.4",
+    "bootbox" : "4.2.0"
   }
 }

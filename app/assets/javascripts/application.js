@@ -18,6 +18,7 @@
 //= require bootstrap/dist/js/bootstrap
 //= require angular/angular
 //= require handlebars
+//= require bootbox/bootbox
 
 
 //= require_tree .

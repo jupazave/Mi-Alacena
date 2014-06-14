@@ -33,6 +33,23 @@ class InicioController < ApplicationController
 
   	end
 
+    def contabilizar_click
+
+      c = Clicks.new
+
+      c.ip = request.ip
+
+      c.save
+
+      render :json => {:save => 1==1}
+
+    end
+
+    def hacer_pedido
+
+
+    end
+
   	private
   		def productos_params params
     		params.permit(:estado_id)
