@@ -23,6 +23,8 @@ $(document).ready(function(){
                 $.post("productos",{estado_id : parseInt( id_estado ) },function(data){
                             
                     if (data.length > 0) {
+
+                        $("#pedidos").show("fast");
                                 
                         productos = {productos: data};
 
@@ -53,6 +55,8 @@ $(document).ready(function(){
 
                     }else{
 
+                        $("#pedidos").hide("fast");
+
                         $("#productos").html(myTemplateSinProducto).show("fast");
 
                     };
@@ -61,7 +65,7 @@ $(document).ready(function(){
                         
             }); // Check input( $( this ).val() ) for validity here
 
-            //$("#estados").val(31).change(); //Auto Seleccion de yucatán
+            $("#estados").val(31).change(); //Auto Seleccion de yucatán
 
         };
 

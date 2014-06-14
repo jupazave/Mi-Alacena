@@ -13,10 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-
 
 // Desde Bower
 //= require bootstrap/dist/js/bootstrap
 //= require angular/angular
 //= require handlebars
+
+
+//= require_tree .
+
+
+
