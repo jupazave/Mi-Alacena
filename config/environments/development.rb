@@ -34,4 +34,20 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.delivery_method = :smtp
+  # Defaults to:
+  config.action_mailer.smtp_settings =  {
+    :enable_starttls_auto => true,
+    :address        => 'smtp.gmail.com',
+    :port           => 587,
+    :domain         => 'mialacena.mx',
+    :authentication => :login,
+    :content_type   => "text/html",
+    :user_name      => 'hola',
+    :password       => 'Abeja2014!'
+  }
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 end

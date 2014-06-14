@@ -1,0 +1,15 @@
+<% total = 0 %>
+<% @pedidos_productos.each do |pedido_producto| %>
+
+	Producto: <%= pedido_producto.productos.name %><br />
+	Cantidad: <%= pedido_producto.cantidad %><br />
+	Precio unidad: <%= pedido_producto.productos.price.to_i %><br />
+	Precio total: <%= pedido_producto.productos.price.to_i * pedido_producto.cantidad %><br />
+	<% total += pedido_producto.productos.price.to_i * pedido_producto.cantidad %>
+
+	-------<br />
+<% end %>
+
+-------<br />
+<%= total %>
+-------<br />

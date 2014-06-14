@@ -72,7 +72,7 @@ class InicioController < ApplicationController
          
       end
 
-      notificar
+      notificar pedido
 
       render :json => {status => 1==1}
 
@@ -90,9 +90,9 @@ class InicioController < ApplicationController
         params.permit(:name, :email, :productos)
       end
 
-      def notificar
+      def notificar pedido
 
-        jP_TOKEN = "v1iH3ecVwwKsgSnJvcmjnhdGsobQH39wb9ujzbS70IsfY"
+        PedidoMailer.enviar_pedido(pedido).deliver
 
 
 
