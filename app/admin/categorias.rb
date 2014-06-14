@@ -1,10 +1,10 @@
-ActiveAdmin.register Clicks do
+ActiveAdmin.register Categorias do
 
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  # permit_params :list, :of, :attributes, :on, :model
+  permit_params :name
   #
   # or
   #
@@ -14,9 +14,10 @@ ActiveAdmin.register Clicks do
   #  permitted
   # end
 
+
   index do
     id_column
-    column :ip
+    column :name
   end
   
 end

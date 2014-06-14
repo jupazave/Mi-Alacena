@@ -21,7 +21,10 @@
 //= require bootbox/bootbox
 
 
-//= require_tree .
+//= require click
+//= require estados
+//= require handlebars.extends
+//= require main
 
 
 

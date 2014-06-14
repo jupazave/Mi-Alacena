@@ -1,3 +1,5 @@
+var test;
+
 $(document).ready(function(){
 
     $("#pagar").click(function () {
@@ -66,13 +68,19 @@ $(document).ready(function(){
 
                         });
 
-                        var sendArray = [
-                            {name: "name", value: $("#name").val() },
-                            {name: "email", value: $("#email").val() },
-                            {name: "productos", value: JSON.stringify(productos) }
-                        ];
+                        var sendArray = 
+                            {name: $("#name").val(), 
+                            email: $("#email").val(), 
+                            productos: productos 
+                        };
 
-                        $.post("api.php?rquest=pedidos", sendArray, function(data){
+                        console.log(sendArray);
+
+                        test = sendArray;
+
+                        $.post("pedido", sendArray, function(data){
+
+                            console.log(data);
 
                             if (!data.status) {
 
