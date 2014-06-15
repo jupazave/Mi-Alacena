@@ -1,0 +1,22 @@
+Sat, 14 Jun 2014 19:31:32 -0500
+README.rdoc	Sat, 14 Jun 2014 19:30:08 -0500
+app/admin/admin_user.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/admin/categorias.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/admin/clicks.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/admin/dashboard.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/admin/estados.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/admin/pedidos.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/admin/pedidos_productos.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/admin/productos.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/controllers/application_controller.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/controllers/inicio_controller.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/helpers/application_helper.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/helpers/inicio_helper.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/mailers/pedido_mailer.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/models/admin_user.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/models/categorias.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/models/clicks.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/models/estados.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/models/pedidos.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/models/pedidos_productos.rb	Sat, 14 Jun 2014 19:30:08 -0500
+app/models/productos.rb	Sat, 14 Jun 2014 19:30:08 -0500
