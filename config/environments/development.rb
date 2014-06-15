@@ -37,15 +37,13 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   # Defaults to:
-  config.action_mailer.smtp_settings =  {
-    :enable_starttls_auto => true,
-    :address        => 'smtp.gmail.com',
+  config.action_mailer.smtp_settings = {
+    :address        => "smtp.gmail.com",
     :port           => 587,
-    :domain         => 'mialacena.mx',
-    :authentication => :login,
-    :content_type   => "text/html",
-    :user_name      => 'hola',
-    :password       => 'Abeja2014!'
+    :domain         => "mialacena.mx",
+    :authentication => :plain,
+    :user_name      => "hola@mialacena.mx",
+    :password       => "Abeja2014!"
   }
 
   config.action_mailer.perform_deliveries = true

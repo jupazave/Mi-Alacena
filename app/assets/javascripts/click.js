@@ -123,7 +123,7 @@ $(document).ready(function(){
 
                                 bootbox.hideAll();
 
-                                window.location.href = './gracias.html';
+                                window.location.href = './gracias';
 
                             };
 

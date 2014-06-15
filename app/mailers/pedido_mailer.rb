@@ -1,5 +1,5 @@
 class PedidoMailer < ActionMailer::Base
-	default from: 'hola@mialacena.mx'
+	default from: "MiAlacena <hola@mialacena.mx>"
 
   	def enviar_pedido(pedido)
     	@pedido = pedido
