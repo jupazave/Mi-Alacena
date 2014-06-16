@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+
+	<h2><%= link_to post.title, post_path(post) %></h2>
+	<div>By: <%= link_to  post.admin_user.name, author_path(post.admin_user) %></div>
+	<div><%= markdown_preview post %></div>
+	<hr />
+
+<% end %>

@@ -125,6 +125,7 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.0.0)
+    rdiscount (2.1.7.1)
     rdoc (4.1.1)
       json (~> 1.4)
     responders (1.1.0)
@@ -175,6 +176,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.1.0)
+  rdiscount
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

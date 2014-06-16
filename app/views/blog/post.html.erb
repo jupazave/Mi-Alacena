@@ -1,0 +1,5 @@
+<h2><%= @post.title %></h2>
+
+<div>By: <%= link_to  @post.admin_user.name, author_path(@post.admin_user) %></div>
+
+<div><%= markdown @post %></div>
