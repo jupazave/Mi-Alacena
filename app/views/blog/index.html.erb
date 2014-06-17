@@ -1,8 +1,43 @@
-<% @posts.each do |post| %>
+<div class="wrap">
 
-	<h2><%= link_to post.title, post_path(post) %></h2>
-	<div>By: <%= link_to  post.admin_user.name, author_path(post.admin_user) %></div>
-	<div><%= markdown_preview post %></div>
-	<hr />
 
-<% end %>
+	<div class="container">
+
+		<div class="jumbotron text-center">
+
+
+                <%= link_to image_tag("logo.png", :class => "img-center img-responsive"), root_path %>
+
+			<h2>Envíos a todo México de productos locales auténticos de cada Estado.</h2>
+
+			<div class="row" style="margin-top:40px">
+				<div class="col-md-4 col-md-offset-2" style="margin-top:10px">
+					<%= link_to "Haz tu pedido", "/#pedidos", class: "ani-link btn btn-lg btn-primary", :target => "_parent" %>
+				</div>
+				<div class="col-md-4" style="margin-top:10px">
+					<%= link_to "¿Alguna duda?", "/#faqs", class: "ani-link btn btn-lg btn-primary", :target => "_parent"%>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="main-content">
+			<% @posts.each do |post| %>
+
+				<h2><%= link_to post.title, post_path(post) %></h2>
+				<div>By: <%= link_to  post.admin_user.name, author_path(post.admin_user) %></div>
+				<div><%= markdown_preview post %></div>
+				<hr />
+
+			<% end %>
+
+
+		</div> <!-- /main-content -->
+
+
+	</div> <!-- /container -->
+
+
+
+
+</div> <!-- /wrap  -->

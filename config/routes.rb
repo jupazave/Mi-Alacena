@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'paquetes/index'
+
+  get 'paquetes/paquetes'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -16,7 +20,7 @@ Rails.application.routes.draw do
   post 'pedido' => 'inicio#hacer_pedido'
   post 'productos' => 'inicio#productos'
 
-  get 'blog' => 'blog#index'
+  get '/blog/', to: 'blog#index', as: 'blog'
 
   get '/blog/author/:id', to: 'blog#author', as: 'author'
   get '/blog/post/:id', to: 'blog#post', as: 'post'

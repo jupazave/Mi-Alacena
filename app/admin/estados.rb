@@ -1,3 +1,4 @@
+=begin
 ActiveAdmin.register Estados do
 
   
@@ -20,3 +21,4 @@ ActiveAdmin.register Estados do
   end
   
 end
+=end
