@@ -51,4 +51,10 @@ $(window).scroll(function () {
 
     };
   };
+});
+
+
+$("#pagar-fixed").submit(function(event){
+  event.preventDefault();
+  console.log("click pagar fixed")
 })

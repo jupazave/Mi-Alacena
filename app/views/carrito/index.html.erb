@@ -16,7 +16,7 @@
 	      <% total = 0 %>
 	      	<% @carrito.each_with_index do |producto,index| %>
 
-						<tr data-price="<%= producto[:producto].price%>">
+						<tr data-id="<%= producto[:producto].id%>" data-price="<%= producto[:producto].price%>">
 		          <td><%= image_tag producto[:producto].image.url(:thumb) %> <%= producto[:producto].name%></td>
 		          <td class="text-center">
 		          	<%= text_field_tag("cantidad_#{producto[:producto].id}" , producto[:cantidad], class: "text-center items")%>
@@ -36,7 +36,7 @@
 	      </tbody>
 	    </table>
 
-	    <div class="pull-right b">
+	    <div class="pull-right total">
 	    	Total: <strong><%= number_to_currency(total, locale: :es) %> MXN </strong>
 	    </div>
 			</div>

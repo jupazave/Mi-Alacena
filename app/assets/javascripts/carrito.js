@@ -13,21 +13,72 @@ $(document).ready(function(){
 					$row.remove();
 				});
 			}else{
-				bootbox.alert("Hubo un error, porfavor intentalo de nuevo.")
+				bootbox.alert("Hubo un error, porfavor intentalo de nuevo.");
 			};
 		});
 	});
 });
 
 $(document).ready(function () {
-	$(".item").change(function () {
+	$(".items").change(function () {
 		var price = $(this).parent().closest('tr').data("price");
 		var items = $(this).val();
 
 		var total = price*items;
 
-		console.log(total);
+		//console.log(total);
 
-		$(this).closest('.price').html("$"+total+" MXN");
+		$(this).parent().parent().children("td.total").html("$<span>"+total+".00</span> MXN");
+
+		var total_carrito = 0;
+
+		$("tbody tr").each(function () {
+			var precio_indivitual = $(this).data("price") * $(this).children("td").children("input").val();
+			total_carrito += precio_indivitual;
+		});
+
+
+
+		$("div.total > strong").html("$"+total_carrito+".00 MXN");
 	});
+});
+
+//actualizar el carrito
+
+$(document).ready(function(){
+	$("#actualizar").click(function () {
+		
+
+		var arry =  new Array();
+
+		$("tbody tr").each(function () {
+			var precio_individual = $(this).data("price");
+			var cantidad_items = $(this).children("td").children("input").val();
+			var id_producto = $(this).data("id");
+
+			var objet = {
+				"id": id_producto,
+				"cantidad": cantidad_items
+			}
+
+			arry.push(objet);
+
+			
+		
+		});
+
+		console.log(arry);
+
+		$.post("carrito/update", {productos: arry}, function (data) {
+			if (data.status) {
+				window.reload();
+			}else{
+				bootbox.alert("Hubo un error, porfavor intentalo de nuevo.");
+			};
+		})
+	})
+});
+
+$(document).ready(function () {
+	// body...
 });

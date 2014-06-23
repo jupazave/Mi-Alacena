@@ -46,8 +46,26 @@ class CarritoController < ApplicationController
   end
 
   def actualizar
+
+    params[:productos].each do |producto|
+      id = producto[1]["id"]
+      cantidad = producto[1]["cantidad"].to_i
+
+      session[:carrito].each do | producto_en_carrito |
+
+        if producto_en_carrito["id"] == id
+
+          producto_en_carrito["cantidad"] = cantidad
+
+          break
+        end
+      end
+
+
+    end
+
     
-    redirect_to carrito_path
+    render :json => {:status => true}
   end
 
   def vaciar
@@ -73,7 +91,7 @@ class CarritoController < ApplicationController
 
     session[:carrito] = session[:carrito]
 
-    render :json => {status => true}
+    render :json => {:status => true}
   end
 
   private
