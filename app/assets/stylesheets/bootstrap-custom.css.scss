@@ -1,0 +1,16 @@
+$brand-primary: #E94C43;
+$body-bg: #F6ED9A;
+$text-color: #000;
+$jumbotron-bg: rgba(255,0,0,0);
+
+$a: #EA4D43;
+
+$font-family-sans-serif:  "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@import "bootstrap";
+@import "font-awesome";
+
+
+.img-center{
+	margin:0 auto;
+}

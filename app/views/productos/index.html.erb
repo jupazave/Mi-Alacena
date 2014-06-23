@@ -1,0 +1,42 @@
+<div class="container">
+  
+  <div class="main-content">
+
+    <div class="row">
+
+      <div class="col-md-offset-7 col-md-5">
+        <div class="form-group bottom-buffer estados-wrap">
+          <label>Elige un estado:</label><br>
+          <select id="estados" class="estados" class="form-control"></select>
+        </div>
+      </div>
+    </div>
+    <h3 id="pedidos" class="text-center bottom-buffer" style="padding-top:20px">Selecciona los productos que quieras en tu pedido</h3>
+
+    <div id="productos">
+      
+    </div>
+
+    <div class="row">
+      
+      <div class="col-md-4 col-md-offset-8">
+        <%= form_tag({controller: "carrito", action: "pago"}, method: "post", id: "pagar-form") do %>
+        <%= button_tag "Continuar", class: "btn btn-lg btn-primary pull-right", id: "pagar", :disabled => true  %>
+  
+        <% end %>
+
+        
+      </div>
+    </div>
+    
+    
+  </div> <!-- /main-content -->
+
+
+</div>
+<div class="fixed-pagar">
+  <div class="container">
+    <%= button_tag "Continuar", class: "btn btn-lg btn-primary pull-right", id: "pagar-fixed", :disabled => true  %>
+  </div>
+  
+</div>
