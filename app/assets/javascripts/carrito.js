@@ -47,8 +47,6 @@ $(document).ready(function () {
 
 $(document).ready(function(){
 	$("#actualizar").click(function () {
-		
-
 		var arry =  new Array();
 
 		$("tbody tr").each(function () {
@@ -62,9 +60,6 @@ $(document).ready(function(){
 			}
 
 			arry.push(objet);
-
-			
-		
 		});
 
 		console.log(arry);
@@ -75,10 +70,35 @@ $(document).ready(function(){
 			}else{
 				bootbox.alert("Hubo un error, porfavor intentalo de nuevo.");
 			};
-		})
-	})
+		});
+	});
 });
 
 $(document).ready(function () {
-	// body...
+	$("#continuar").click(function () {
+		var arry =  new Array();
+
+		$("tbody tr").each(function () {
+			var precio_individual = $(this).data("price");
+			var cantidad_items = $(this).children("td").children("input").val();
+			var id_producto = $(this).data("id");
+
+			var objet = {
+				"id": id_producto,
+				"cantidad": cantidad_items
+			}
+
+			arry.push(objet);
+		});
+
+		console.log(arry);
+
+		$.post("carrito/update", {productos: arry}, function (data) {
+			if (data.status) {
+				window.location = "carrito/pago"
+			}else{
+				bootbox.alert("Hubo un error, porfavor intentalo de nuevo.");
+			};
+		});
+	})
 });

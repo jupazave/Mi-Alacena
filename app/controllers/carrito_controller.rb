@@ -31,8 +31,12 @@ class CarritoController < ApplicationController
   end
 
   def pago
+    
+  end
+
+  def agregar
   	# render :json => pago_params
-    pago_params[:productos].split(/,/).each do |producto|
+    agregar_params[:productos].split(/,/).each do |producto|
 
       session[:carrito] << {
         :id => producto,
@@ -101,7 +105,7 @@ class CarritoController < ApplicationController
     
     end
 
-  	def pago_params
+  	def agregar_params
   		params.permit(:productos)
   		
   	end

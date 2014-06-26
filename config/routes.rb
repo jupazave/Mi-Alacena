@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get 'carrito/empty' => 'carrito#vaciar'
   post 'carrito/update' => 'carrito#actualizar'
   post 'carrito/delete' => 'carrito#borrar'
-  post 'carrito/pago' => 'carrito#pago'
+  post 'carrito/agregar' => 'carrito#agregar'
+  get 'carrito/pago' => 'carrito#pago'
   
 
   
