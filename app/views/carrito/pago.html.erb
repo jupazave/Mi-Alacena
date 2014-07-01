@@ -1,5 +1,40 @@
+<% content_for :head_javascript do %>
+  <%= javascript_include_tag "https://conektaapi.s3.amazonaws.com/v0.3.0/js/conekta.js" %>
+  <%= javascript_include_tag "pago.js" %>
+<% end %>
+
 <div class="container">
 	<div class="main-content">
-		
+		<form action="pagado" method="POST" id="card-form">
+		  <span class="card-errors"></span>
+		  <div class="form-row">
+		    <label>
+		      <span>Nombre del tarjetahabiente</span>
+		      <input type="text" size="20" data-conekta="card[name]"/>
+		    </label>
+		  </div>
+		  <div class="form-row">
+		    <label>
+		      <span>Número de tarjeta de crédito</span>
+		      <input type="text" size="20" data-conekta="card[number]"/>
+		    </label>
+		  </div>
+		  <div class="form-row">
+		    <label>
+		      <span>CVC</span>
+		      <input type="text" size="4" data-conekta="card[cvc]"/>
+		    </label>
+		  </div>
+		  <div class="form-row">
+		    <label>
+		      <span>Fecha de expiración (MM/AAAA)</span>
+		      <input type="text" size="2" data-conekta="card[exp_month]"/>
+		    </label>
+		    <span>/</span>
+		    <input type="text" size="4" data-conekta="card[exp_year]"/>
+		  </div>
+		  <button type="submit">Pagar ahora!</button>
+		</form>
 	</div>
 </div>
+

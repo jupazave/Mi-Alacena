@@ -34,6 +34,33 @@ class CarritoController < ApplicationController
     
   end
 
+  def pagado
+
+    Conekta.api_key = "key_soq6Dkb7VtcbszP3"
+    @error = nil
+
+    begin
+      charge = Conekta::Charge.create({
+        amount: 51000,
+        currency: "MXN",
+        description: "Pizza Delivery",
+        reference_id: "orden_de_id_interno",
+        card: params[:conektaTokenId] 
+        #"tok_a4Ff0dD2xYZZq82d9"
+      })
+    rescue Conekta::ParameterValidationError => e
+      @error = e.message 
+      #alguno de los parámetros fueron inválidos
+    rescue Conekta::ProcessingError => e
+      @error =  e.message 
+      #la tarjeta no pudo ser procesada
+    rescue Conekta::Error
+      @error =  e.message 
+      #un error ocurrió que no sucede en el flujo normal de cobros como por ejemplo un auth_key incorrecto
+    end
+
+  end
+
   def agregar
   	# render :json => pago_params
     agregar_params[:productos].split(/,/).each do |producto|

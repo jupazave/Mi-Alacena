@@ -1,8 +1,8 @@
-var myTemplateModal = "template/modal";
+var myTemplateModal = "/template/modal";
 
-var myTemplateProducto = "template/productos";
+var myTemplateProducto = "/template/productos";
 
-var myTemplateSinProducto = "template/sin-productos";
+var myTemplateSinProducto = "/template/sin-productos";
 
 $(document).ready(function(){
     
