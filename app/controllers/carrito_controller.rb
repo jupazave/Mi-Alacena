@@ -48,14 +48,16 @@ class CarritoController < ApplicationController
         card: params[:conektaTokenId] 
         #"tok_a4Ff0dD2xYZZq82d9"
       })
+
+      @status = charge.paid
     rescue Conekta::ParameterValidationError => e
-      @error = e.message 
+      @error = e
       #alguno de los parámetros fueron inválidos
     rescue Conekta::ProcessingError => e
-      @error =  e.message 
+      @error =  e
       #la tarjeta no pudo ser procesada
     rescue Conekta::Error
-      @error =  e.message 
+      @error =  e
       #un error ocurrió que no sucede en el flujo normal de cobros como por ejemplo un auth_key incorrecto
     end
 

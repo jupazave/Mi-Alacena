@@ -23,17 +23,19 @@ Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
     
 });
 
-Handlebars.registerHelper("mod", function(index_count,mod,block) {
+Handlebars.registerHelper("mod", function (index_count, mod, block) {
 
-    if(parseInt(index_count)%(mod)=== 0){
+    if(parseInt(index_count)%(mod) === 0){
         return block.fn(this);
     }
-});
+   
+} );
 
 
-Handlebars.registerHelper("modExtra", function(index_count,mod,block) {
+Handlebars.registerHelper("modExtra", function (index_count, mod, block) {
 
-    if((parseInt(index_count)+1)%(mod)=== 0){
+    if((parseInt(index_count)+1)%(mod) === 0){
         return block.fn(this);
     }
+
 });
