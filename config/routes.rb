@@ -1,27 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'init/index'
+
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-
-  root 'productos#index'
-
-  get 'template/productos' => 'handlebar_templates#productos'
-  get 'template/modal' => 'handlebar_templates#modal'
-  get 'template/sin-productos' => 'handlebar_templates#empty'
-
-  get 'productos/estados' => 'productos#estados'
-  post 'productos/listado' => 'productos#productos'
-
-  get 'carrito' => 'carrito#index'
-  get 'carrito/index' => 'carrito#index'
-  get 'carrito/empty' => 'carrito#vaciar'
-  post 'carrito/update' => 'carrito#actualizar'
-  post 'carrito/delete' => 'carrito#borrar'
-  post 'carrito/agregar' => 'carrito#agregar'
-  get 'carrito/pago' => 'carrito#pago'
-  post 'carrito/pagado' => 'carrito#pagado'
   
-
+  root 'init#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

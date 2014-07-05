@@ -1,2 +1,0 @@
-class PaquetesController < ApplicationController
-end

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_carrito
-  skip_before_action :verify_authenticity_token, if: :check_token?
+  #skip_before_action :verify_authenticity_token, if: :check_token?
 
   private
  
@@ -16,9 +16,9 @@ class ApplicationController < ActionController::Base
     session[:carrito] ||= []
   end
 
- def check_token?
-    return true if self.class == CarritoController && self.action_name == "pagado"
+  #def check_token?
+    #return true if self.class == CarritoController && self.action_name == "pagado"
     # do your thing
-    false
-  end
+    #false
+  #end
 end
