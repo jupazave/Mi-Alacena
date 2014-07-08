@@ -52,3 +52,5 @@ gem 'devise'
 gem 'paperclip', '~> 4.1.1'
 
 gem 'conekta'
+
+gem 'sass-mediaqueries-rails'

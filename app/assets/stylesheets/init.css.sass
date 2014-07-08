@@ -1,3 +1,170 @@
 // Place all the styles related to the init controller here.
 // They will automatically be included in application.css.
 // You can use Sass here: http://sass-lang.com/
+
+
+@import "media-queries"
+body
+	padding-top: 20px
+	padding-bottom: 40px
+	background-color: rgb(252, 252, 252)
+	font-family: "Oswald", sans-serif
+
+h2
+	font-size: 50px
+
+.ciudad
+	margin-top: 3px
+	font-size: 40px
+
+small
+	font-size: 11px
+
+
+hr 
+	margin: 36px 0 50px 0
+
+
+.container 
+	padding: 0 100px
+
+
+.banner
+	background-image: url('plane1.jpg')
+	background-position: center 0
+	height: 360px
+	color: #FFF
+	margin: 20px 0
+	padding-top: 30px
+	position: relative
+
+
+.badge 
+	position: absolute
+	bottom: 14px
+	right: 20px
+	background: none
+	@include max-screen(991px)
+		width: 126px
+
+
+.square 
+	font-family: "Oswald", sans-serif
+	font-size: 26px
+	width: 560px
+	background-color: rgba(102, 23, 41, 0.8)
+	padding: 12px 22px
+
+	@include max-screen(991px)
+		font-size: 18px
+		width: auto
+		text-align: center
+
+
+.slide-a, .slide-b 
+	
+	height: 513px
+	color: #FFF
+	padding: 50px 50px 0 50px
+	margin-top: 15px
+
+	position: relative
+
+	h2
+		height: 104px
+		font-size: 48px
+
+		@include max-screen(1200px)
+			font-size: 36px
+
+		@include max-screen(991px)
+			font-size: 40px
+		
+		@include max-screen(640px)
+			font-size: 36px
+
+		@include max-screen(524px)
+			font-size: 32px
+
+		@include max-screen(500px)
+			font-size: 26px
+
+	h3
+
+		@include max-screen(991px)
+			font-size: 34px
+
+		@include max-screen(640px)
+			font-size: 28px
+
+		@include max-screen(500px)				
+			font-size: 20px
+
+		.ciudad
+			font-size: 40px
+
+			@include max-screen(991px)
+				font-size: 36px
+
+			@include max-screen(640px)
+				font-size: 30px
+
+			@include max-screen(500px)
+				font-size: 26px
+
+	.boton
+		bottom: 54px
+		left: 0
+		right: 0
+		position: absolute
+		display: block
+		width: 80%
+		margin: 0 auto
+
+
+.slide-a 
+	background-image: url('dona.jpg')
+	background-position: center 0
+	background-repeat: no-repeat
+
+
+.slide-b 
+	background-image: url('rosca.jpg')
+	background-position: center 0
+	background-repeat: no-repeat
+
+
+.btn 
+	//margin: 100px 20px
+	padding: 20px
+	font-size: 20px
+
+
+
+.btn-primary 
+	background-color: #FF5F53
+	border: 0
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus 
+	background-color: #FF7E72
+
+
+.prensa
+	font-size: 40px
+	margin-bottom: 15px
+
+
+address
+	font-size: 11px
+
+.img-center
+	margin: 0 auto
+
+.footer
+	@include max-screen(500px)
+		ul > li 
+			margin-bottom: 10px
+		.col-xs-12	
+			text-align: center

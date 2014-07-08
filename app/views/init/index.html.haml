@@ -1,2 +1,91 @@
-%h1 Init#index
-%p Find me in app/views/init/index.html.haml
+.container
+	.logo
+		=image_tag "logo.png", class: "img-responsive"
+	.banner
+		.square ENVIAMOS LOS MEJORES PRODUCTOS A TU CIUDAD
+		.badge
+			=image_tag "badge.png", class: "img-responsive"
+	.row
+		.col-md-6
+			.slide-a
+				%h2
+					DONAS GLASEADAS
+					%br/
+					KRISPY KREAM
+				%h3
+					%i.fa.fa-plane
+					ENTREGA: 11 DE JUNIO EN  
+					%br/
+					%span.ciudad
+						MERIDA, YUCATAN
+				.boton
+					= link_to "COMPRA AHORA", "", class: "btn btn-block btn-primary"
+
+		.col-md-6
+			.slide-b
+				%h2
+					ROSCA BRIOCHE
+					%br/
+					TERE CAZOLA
+				%h3
+					%i.fa.fa-plane
+					ENTREGA: 18 DE JUNIO EN EL 
+					%br/
+					%span.ciudad
+						DISTRITO FEDERAL
+				.boton
+					= link_to "COMPRA AHORA", "", class: "btn btn-block btn-primary"
+
+	.row
+		.col-md-12
+
+			%h3.text-center
+				LEYENDA CON CORREO
+
+				%p hola@mialacena.mx
+
+	%hr/
+
+	%h2.text-center.prensa
+		MENSIONES EN PRENSA
+
+	.row
+		.col-md-3
+
+			= link_to image_tag("milenio.png", :class => "img-responsive img-center"), "http://www.facebook.com/mialacena.mx/photos/a.1492333820980140.1073741828.1491164187763770/1518361511710704/", :target => "_blank"
+
+		.col-md-3
+
+			= link_to image_tag("yucatan.png", :class => "img-responsive img-center"),  "http://yucatan.com.mx/tecnologia/internet/emprendedores-yucatecos-patrocinados-por-startup-mexico", :target => "_blank"
+
+		.col-md-3
+
+			= link_to image_tag("un1on.png", :class => "img-responsive img-center"), "#", :target => "_blank"
+
+		.col-md-3
+
+			= link_to image_tag("startupmx.png", :class => "img-responsive img-center"), "http://www.startup.mx/startup-pitch-mi-alacena/", :target => "_blank"
+
+	%hr/
+
+	.row.footer
+		.col-md-3.col-xs-12
+			%address
+				MI ALACENA DE MEXICO LOGISTICA SAPI DE CV 
+				%br/
+				IGNACIO ALLENDE 21 AMPLIACION TORRE BLANCA 
+				%br/
+				CP 11289, CIUDAD DE MEXICO
+
+		.col-md-9.col-xs-12.text-right
+			%p
+				CON APOYO DE
+			%ul.list-inline
+				%li
+					=image_tag("sum.png", :class => "img-responsive img-center")
+				%li
+					=image_tag("inadem.png", :class => "img-responsive img-center")
+
+				%li
+					=image_tag("cdmx.png", :class => "img-responsive img-center")
+
