@@ -1,7 +1,28 @@
 !!!
 %html
   %head
+    %meta{:charset => "utf-8"}/
+    %meta{:"http-equiv" => "X-UA-Compatible" , :content=>"IE=edge"}/
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}/
+    %meta{:name => "description", :content => "Envíos a todo México de productos locales auténticos de cada Estado."}/
+    %meta{:name => "author", :content => "Mi Alacena"}/
     %title= "Mi Alacena"
+
+    =favicon_link_tag 'favicon.ico'
+
+    <!-- for Facebook -->         
+    %meta{:property => "og:title", :content=>"MiAlacena.mx"}/
+    %meta{:property => "og:type", :content=>"website"}/
+    //%meta{:property => "og:image", :content=>"asset_url 'marco.png'" }/
+    %meta{:property => "og:url", :content=>"http://mialacena.mx/"}/
+    %meta{:property => "og:description", :content=>"Envíos a todo México de productos locales auténticos de cada Estado."}/
+
+    <!-- for Twitter -->          
+    %meta{:property => "twitter:card", :content=>"summary"}/
+    %meta{:property => "twitter:title", :content=>"MiAlacena.mx"}/
+    %meta{:property => "twitter:description", :content=>"Envíos a todo México de productos locales auténticos de cada Estado."}/
+    //%meta{:property => "twitter:image", :content=>asset_url 'marco.png' }/
+
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Oswald"
     = stylesheet_link_tag :application, :media => "all"
     = javascript_include_tag :application
