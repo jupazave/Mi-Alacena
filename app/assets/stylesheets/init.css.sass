@@ -72,6 +72,9 @@ hr
 
 	position: relative
 
+	@include screen(630px, 991px) 
+		text-align: center
+
 	h2
 		height: 104px
 		font-size: 48px
@@ -122,8 +125,15 @@ hr
 		display: block
 		width: 80%
 		margin: 0 auto
+		@include screen(1px, 991px) 
+
+			width: 54%
 
 .slide-c, .slide-d, .slide-e
+
+	@include screen(630px, 991px) 
+		text-align: center
+
 	height: 350px
 	color: #FFF
 	margin-top: 15px
@@ -135,11 +145,28 @@ hr
 		font-size: 30px
 		height: 90px
 
+		@include max-screen(1199px)
+			font-size: 28px
+
+
+		@include max-screen(320px)
+			font-size: 24px
 	h3
 		font-size: 20px
 
+		@include max-screen(320px)
+
+			font-size: 16px
+
 		.ciudad
 			font-size: 30px
+
+			@include max-screen(1199px)
+			font-size: 28px
+
+			@include max-screen(320px)
+				font-size: 24px
+
 
 	.boton
 		bottom: 22px
@@ -167,6 +194,8 @@ hr
 	background-image: url('kk-surtidas.jpg')
 	background-position: -10px
 	background-repeat: no-repeat
+	@include screen(1px, 991px) 
+		background-position: center
 
 
 .slide-d 
@@ -223,8 +252,9 @@ address
 		text-align: center
 
 
-.prensa + .row > img 
-	@include max-screen(640px)
+.prensa + .row
+
+	img
 		padding: 1em
 
 .buffer-30
