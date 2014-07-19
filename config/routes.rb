@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'webhook/recive'
+
   get 'init/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
