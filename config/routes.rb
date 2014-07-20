@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'webhook/recive'
-
+  
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'init/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

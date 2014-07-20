@@ -9,90 +9,85 @@
     .col-md-6
       .slide-a
         %h2
-          DONAS GLASEADAS
-          %br/
-          KRISPY KREME
+          = @kk.title.html_safe
         %h3
           %i.fa.fa-plane
-          ENTREGA: 23 DE JULIO EN  
+          ENTREGA: 
+          = @kk.date 
           %br/
           %span.ciudad
-            MERIDA, YUCATAN
+            = @kk.city
           %br/
           %i.fa.fa-dollar
-          180.00
+          = @kk.price
         .boton
-          = link_to "COMPRA AHORA", "http://bit.ly/mialacena-kk", class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('http://bit.ly/mialacena-kk')"
+          = link_to "COMPRA AHORA", @kk.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@kk.link}')"
     .col-md-6
       .slide-b
         %h2
-          ROSCA BRIOCHE
-          %br/
-          TERE CAZOLA
+          = @cazola.title.html_safe
         %h3
           %i.fa.fa-plane
-          ENTREGA: 23 DE JULIO EN EL 
+          ENTREGA: 
+          = @cazola.date 
           %br/
           %span.ciudad
-            DISTRITO FEDERAL
+            = @cazola.city
           %br/
           %i.fa.fa-dollar
-          180.00
+          = @cazola.price
         .boton
-          = link_to "COMPRA AHORA", "http://bit.ly/mialacena-cazola", class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('http://bit.ly/mialacena-cazola')"
+          = link_to "COMPRA AHORA", @cazola.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@cazola.link}')"
 
   .row
     .col-md-4
       .slide-c
         %h2
-          DONAS SURTIDAS
-          %br/
-          KRISPY KREME
+          = @kk_surtida.title.html_safe
         %h3
           %i.fa.fa-plane
-          ENTREGA: 23 DE JULIO EN  
+          ENTREGA: 
+          =@kk_surtida.date
           %br/
           %span.ciudad
-            MERIDA, YUCATAN
+            =@kk_surtida.city
           %br/
           %i.fa.fa-dollar
-          230.00
+          =@kk_surtida.price
         .boton
-          = link_to "COMPRA AHORA", "http://bit.ly/mialacena-kk-surtida", class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('http://bit.ly/mialacena-kk-surtida')"
+          = link_to "COMPRA AHORA", @kk_surtida.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@kk_surtida.link}')"
     .col-md-4
       .slide-d
         %h2
-          HOJALDRAS
-          %br/
-          TERE CAZOLA
+          = @hojaldra.title.html_safe
         %h3
           %i.fa.fa-plane
-          ENTREGA: 23 DE JULIO EN  
+          ENTREGA: 
+          =@hojaldra.date
           %br/
           %span.ciudad
-            DISTRITO FEDERAL
+            =@hojaldra.city
           %br/
           %i.fa.fa-dollar
-          180.00
+          =@hojaldra.price
         .boton
-          = link_to "COMPRA AHORA", "http://bit.ly/mialacena-hojaldra", class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('http://bit.ly/mialacena-hojaldra')"
+          = link_to "COMPRA AHORA", @hojaldra.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@hojaldra.link}')"
     .col-md-4
       .slide-e
         %h2
-          BOLITAS DE QUESO
-          %br/
-          TERE CAZOLA
+          = @bolita.title.html_safe
         %h3
           %i.fa.fa-plane
-          ENTREGA: 23 DE JULIO EN  
+          ENTREGA: 
+          =@bolita.date
           %br/
           %span.ciudad
-            DISTRITO FEDERAL
+            =@bolita.city
           %br/
           %i.fa.fa-dollar
-          90.00
+          =@bolita.price
         .boton
-          = link_to "COMPRA AHORA", "http://bit.ly/mialacena-bolitas", class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('http://bit.ly/mialacena-bolitas')"
+          = link_to "COMPRA AHORA", @bolita.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@bolita.link}')"
   .buffer-30
   .row.mail
     .col-md-12
