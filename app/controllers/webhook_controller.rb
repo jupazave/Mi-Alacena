@@ -23,7 +23,7 @@ class WebhookController < ApplicationController
 		url = URI.parse("https://api.pushover.net/1/messages.json")
 		req = Net::HTTP::Post.new(url.path)
 		req.set_form_data({
-		  :token => "ag1JgM3uQFte1UgjEYjLNjGuNk2JnK",
+		  :token => "asv7qonu2q2mvrg8p5NyPE8DgoWvK7",
 		  :user => "ue2ge2a8HTBSMZVEMsxvKBrMPgb8Ms",
 		  :message => mensaje,
 		})
