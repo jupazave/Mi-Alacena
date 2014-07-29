@@ -21,7 +21,7 @@
           %i.fa.fa-dollar
           = @kk.price
         .boton
-          = link_to "COMPRA AHORA", @kk.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@kk.link}')"
+          = link_to "COMPRA AHORA", @kk.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@kk.link}')",:data => {'paypal' => "#{@kk.paypal}", 'compropago' => "#{@kk.link}", 'payment' => true}
     .col-md-6
       .slide-b
         %h2
