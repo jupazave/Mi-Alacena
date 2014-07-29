@@ -21,7 +21,7 @@
           %i.fa.fa-dollar
           = @kk.price
         .boton
-          = link_to "COMPRA AHORA", @kk.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@kk.link}')"
+          = link_to "COMPRA AHORA", "#", class: "btn btn-block btn-primary",:data => {'paypal' => "#{@kk.paypal}", 'compropago' => "#{@kk.link}", 'payment' => true}
     .col-md-6
       .slide-b
         %h2
@@ -37,7 +37,7 @@
           %i.fa.fa-dollar
           = @cazola.price
         .boton
-          = link_to "COMPRA AHORA", @cazola.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@cazola.link}')"
+          = link_to "COMPRA AHORA", "#", class: "btn btn-block btn-primary",:data => {'paypal' => "#{@cazola.paypal}", 'compropago' => "#{@cazola.link}", 'payment' => true}
 
   .row
     .col-md-4
@@ -55,7 +55,7 @@
           %i.fa.fa-dollar
           =@kk_surtida.price
         .boton
-          = link_to "COMPRA AHORA", @kk_surtida.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@kk_surtida.link}')"
+          = link_to "COMPRA AHORA", "#", class: "btn btn-block btn-primary", :data => {'paypal' => "#{@kk_surtida.paypal}", 'compropago' => "#{@kk_surtida.link}", 'payment' => true}
     .col-md-4
       .slide-d
         %h2
@@ -71,7 +71,7 @@
           %i.fa.fa-dollar
           =@hojaldra.price
         .boton
-          = link_to "COMPRA AHORA", @hojaldra.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@hojaldra.link}')"
+          = link_to "COMPRA AHORA", "#", class: "btn btn-block btn-primary" ,:data => {'paypal' => "#{@hojaldra.paypal}", 'compropago' => "#{@hojaldra.link}", 'payment' => true}
     .col-md-4
       .slide-e
         %h2
@@ -87,7 +87,7 @@
           %i.fa.fa-dollar
           =@bolita.price
         .boton
-          = link_to "COMPRA AHORA", @bolita.link, class: "btn btn-block btn-primary", :onclick => "trackOutboundLink('#{@bolita.link}')"
+          = link_to "COMPRA AHORA", "#", class: "btn btn-block btn-primary", :data => {'paypal' => "#{@bolita.paypal}", 'compropago' => "#{@bolita.link}", 'payment' => true}
   .buffer-30
   .row.mail
     .col-md-12
@@ -175,3 +175,6 @@
         %li
           =image_tag("cdmx.png", :class => "img-responsive img-center")
 
+.hidden
+  = image_tag "paypal.png", :id => "paypal_image"
+  = image_tag "compropago.png", :id => "compropago_image"
