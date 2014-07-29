@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require typeflow.js
 //= require init.js
+//= require bootstrap
 //= require bootbox
