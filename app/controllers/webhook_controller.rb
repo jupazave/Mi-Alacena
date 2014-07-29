@@ -1,4 +1,5 @@
 class WebhookController < ApplicationController
+	protect_from_forgery
 	require 'json'
   require "net/https"
 
@@ -32,6 +33,8 @@ class WebhookController < ApplicationController
 		res.use_ssl = true
 		res.verify_mode = OpenSSL::SSL::VERIFY_PEER
 		res.start {|http| http.request(req) }
+
+		render :json => {:status => "OK"}
 
 	end
 end
