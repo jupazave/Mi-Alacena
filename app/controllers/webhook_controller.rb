@@ -7,9 +7,7 @@ class WebhookController < ApplicationController
 		request.body.rewind
     data_json = JSON.parse request.body.read
 
-    mensaje = nil
-
-    api = "sue2ge2a8HTBSMZVEMsxvKBrMPgb8Ms"
+    mensaje = "Push vacio"
 
     if data_json['type'] == "charge.pending"
 
@@ -26,7 +24,7 @@ class WebhookController < ApplicationController
 		req = Net::HTTP::Post.new(url.path)
 		req.set_form_data({
 		  :token => "ag1JgM3uQFte1UgjEYjLNjGuNk2JnK",
-		  :user => "sue2ge2a8HTBSMZVEMsxvKBrMPgb8Ms",
+		  :user => "ue2ge2a8HTBSMZVEMsxvKBrMPgb8Ms",
 		  :message => mensaje,
 		})
 		res = Net::HTTP.new(url.host, url.port)
@@ -34,7 +32,7 @@ class WebhookController < ApplicationController
 		res.verify_mode = OpenSSL::SSL::VERIFY_PEER
 		res.start {|http| http.request(req) }
 
-		render :json => {:status => "OK"}
+		render :json => {:status => "OK", :mensaje => mensaje}
 
 	end
 end
