@@ -11,11 +11,11 @@ class WebhookController < ApplicationController
 
     if data_json['type'] == "charge.pending"
 
-    	mensaje = "Se ha generado un ticket de pago de #{data_json['data']['object']['amount']}"
+    	mensaje = "Se ha generado un ticket de pago de $#{data_json['data']['object']['amount']}"
 
     elsif data_json['type'] == "charge.success"
     		
-    	mensaje = "Se recibío un pago de #{data_json['data']['object']['amount']}"
+    	mensaje = "Se recibío un pago de $#{data_json['data']['object']['amount']}"
 
     end
 
@@ -48,7 +48,7 @@ class WebhookController < ApplicationController
 
 	    if params[:payment_status] == "Completed"
 
-	    	mensaje = "Se ha recibido un pago en paypal de #{params[:payment_gross]}"
+	    	mensaje = "Se ha recibido un pago en paypal de $#{params[:mc_gross]} #{params[:mc_currency]}"
 
 	    end
       url = URI.parse("https://api.pushover.net/1/messages.json")
