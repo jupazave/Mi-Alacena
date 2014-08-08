@@ -90,14 +90,16 @@
           = link_to "COMPRA AHORA", "#", class: "btn btn-block btn-primary", :data => {'paypal' => "#{@bolita.paypal}", 'compropago' => "#{@bolita.link}", 'payment' => true}
   .buffer-30
   .row.mail
-    .col-md-12
+    .col-md-12.text-center
 
-      %h3.text-center
+      %h3
         ¿Buscas otro producto? Háznoslo saber:
 
         %p 
           %br/
           = mail_to "hola@mialacena.mx"
+      .video-container
+        %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :src => "http://www.youtube.com/embed/#{"TKLic3Fz9yU"}", :title => "YouTube video player"}
   %hr/
 
   %h2.text-center.prensa
