@@ -1,0 +1,28 @@
+= form_for @contact, url: "logistica", :method => "POST" do |f|
+  - if @contact.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@contact.errors.count, "error")} prohibited this contact from being saved:"
+      %ul
+        - @contact.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :name, "Nombre"
+    = f.text_field :name, class: "form-control"
+  .form-group
+    = f.label :last_name, "Apellidos"
+    = f.text_field :last_name, class: "form-control"
+  .form-group
+    = f.label :phone, "Teléfono de Contacto"
+    = f.text_field :phone, class: "form-control"
+  .form-group
+    = f.label :product_name, "Nombre de Producto"
+    = f.text_field :product_name, class: "form-control"
+  .form-group
+    = f.label :product_link, "Link de Producto"
+    = f.text_field :product_link, class: "form-control"
+  .form-group
+    = f.label :address, "Dirección de envío"
+    = f.text_area :address, class: "form-control"
+
+  = f.submit 'Enviar' , class: "btn btn-lg btn-block btn-default"
