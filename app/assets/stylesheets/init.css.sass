@@ -13,6 +13,7 @@ body
 
 h2
 	font-size: 50px
+
 	small
 		color: white
 
@@ -34,13 +35,40 @@ hr
 
 
 .banner
-	background-image: url('plane1.jpg')
-	background-position: center 0
+	background-image: url('mexico-usa.jpg')
 	height: 360px
 	color: #FFF
 	margin: 20px 0
 	padding-top: 30px
 	position: relative
+	text-shadow: 0.1em 0.1em 0.1em #000
+	background-position: 0 0
+	@include max-screen(580px) 
+		background-position: -64px 0
+	@include max-screen(333px) 
+		background-position: -133px 0
+		
+
+	.to-form
+		padding: 50px
+		padding-top: 10px
+		@include screen(1px, 333px) 
+			padding: 0
+			padding-top: 10px
+			padding-left: 15px
+			padding-right: 15px
+	h2
+		font-size: 30px
+
+	.boton
+		display: block
+		width: 80%
+		margin: 0 auto
+		margin-top: 30px
+		@include screen(371px, 991px) 
+			margin-top: 100px
+		@include screen(1px, 370px) 
+			margin-top: 65px
 
 
 .badge 
@@ -64,7 +92,7 @@ hr
 		width: auto
 		text-align: center
 
-.slide-a, .slide-b, .slide-c, .slide-d, .slide-e
+.banner, .slide-a, .slide-b, .slide-c, .slide-d, .slide-e
 	.btn 
 		//margin: 100px 20px
 		padding: 20px

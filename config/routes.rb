@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :logistica
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -8,8 +7,8 @@ Rails.application.routes.draw do
   post 'webhook' => "webhook#push"
   post 'paypal' => "webhook#paypal"
 
-  get "logistica" => "logisitca#index"
-  post "logistica" => "logisitca#create"
+  get "logistica" => "logistica#index", as: :logistica
+  post "logistica" => "logistica#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

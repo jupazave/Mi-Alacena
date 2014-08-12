@@ -2,9 +2,14 @@
   .logo
     =image_tag "logo.png", class: "img-responsive"
   .banner
-    .square TE ENVIAMOS TUS PRODUCTOS FAVORITOS
-    .badge
-      =image_tag "badge.png", class: "img-responsive"
+    .row
+      .to-form.col-md-offset-7.col-md-5.text-center
+        %h2
+          SOLICITA PRODUCTOS DE
+          TODO MEXICO Y 
+          ESTADOS UNIDOS
+        .boton
+          = link_to "SOLICITAR AHORA", logistica_path, class: "btn btn-primary"
   .row
     .col-md-6
       .slide-a
@@ -93,11 +98,7 @@
     .col-md-12.text-center
 
       %h3
-        ¿Buscas otro producto? Háznoslo saber:
-
-        %p 
-          %br/
-          = mail_to "hola@mialacena.mx"
+        ¿Cómo funciona Mi Alacena? ¡Conócenos!
       .video-container
         %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :src => "http://www.youtube.com/embed/#{"TKLic3Fz9yU"}", :title => "YouTube video player"}
   %hr/
