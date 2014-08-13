@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+<head>
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Pedido Mi Alacena</title>
+
+
+<style type="text/css">
+img {
+max-width: 100%;
+}
+body {
+-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+body {
+background-color: #f6f6f6;
+}
+@media only screen and (max-width: 640px) {
+  h1 {
+    font-weight: 600 !important; margin: 20px 0 5px !important;
+  }
+  h2 {
+    font-weight: 600 !important; margin: 20px 0 5px !important;
+  }
+  h3 {
+    font-weight: 600 !important; margin: 20px 0 5px !important;
+  }
+  h4 {
+    font-weight: 600 !important; margin: 20px 0 5px !important;
+  }
+  h1 {
+    font-size: 22px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+  }
+  h3 {
+    font-size: 16px !important;
+  }
+  .container {
+    width: 100% !important;
+  }
+  .content {
+    padding: 10px !important;
+  }
+  .content-wrapper {
+    padding: 10px !important;
+  }
+  .invoice {
+    width: 100% !important;
+  }
+}
+</style>
+</head>
+
+<body style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6; background: #f6f6f6; margin: 0; padding: 0;">
+
+<table class="body-wrap" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; background: #f6f6f6; margin: 0; padding: 0;">
+	<tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+		<td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0;" valign="top"></td>
+		<td class="container" width="600" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto; padding: 0;" valign="top">
+			<div class="content" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; max-width: 600px; display: block; margin: 0 auto; padding: 20px;">
+				<table class="main" width="100%" cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; border-radius: 3px; background: #fff; margin: 0; padding: 0; border: 1px solid #e9e9e9;">
+					<tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+						<td class="alert alert-warning" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 16px; vertical-align: top; color: #fff; font-weight: 500; text-align: center; border-radius: 3px 3px 0 0; background: #fff; margin: 0; padding: 20px;" align="center" valign="top">
+							<img alt="" src="data:image/png;base64,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" />
+						</td>
+					</tr>
+					<tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+						<td class="content-wrap" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 20px;" valign="top">
+							<table width="100%" cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+								<tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+									<td class="content-block" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+										Hola <strong style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;"><%= @pago['data']['object']['payment_details']['customer_name'] %></strong>.
+									</td>
+								</tr>
+								<tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+									<td class="content-block" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+										Confirmamos tu pago de <%= @pago['data']['object']['payment_details']['product_name'] %> por <%= number_to_currency @pago['data']['object']['payment_details']['product_price'] %>. <br> En los proximos días recibiras estaras recibiendo tu pedido.
+
+										
+										<% if @surtidas %>
+											
+											Para elegir los sabores de tus donas responde a este correo con la lista que deseas. 
+											<br />
+											<a href="http://www.krispykreme.mx/index.php?art_id=65&categ=346">Sabores Krispy Kreme</a>
+
+										<% end %>
+									</td>
+								</tr>
+								<tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+									<td class="content-block" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+										Equipo Mi Alacena
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<div class="footer" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; clear: both; color: #999; margin: 0; padding: 20px;">
+					<table width="100%" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+						<tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
+							<td class="aligncenter content-block" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 12px; vertical-align: top; text-align: center; margin: 0; padding: 0 0 20px;" align="center" valign="top">Mi Alacena de México Logistica SAPI de CV</td>
+						</tr>
+					</table>
+				</div></div>
+		</td>
+		<td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0;" valign="top"></td>
+	</tr>
+</table>
+
+</body>
+</html>
