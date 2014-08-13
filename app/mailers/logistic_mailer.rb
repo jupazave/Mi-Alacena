@@ -3,6 +3,7 @@ class LogisticMailer < ActionMailer::Base
 
   def contact_email(contact)
     @contact = contact
+    attachments.inline['logo.png'] = File.read( Rails.root.join("app/assets/images/","logo.png") )
     delivery_options = { user_name: "hola@mialacena.mx",
                          password: "Mail123",
                          address: "smtp.mailgun.org" }

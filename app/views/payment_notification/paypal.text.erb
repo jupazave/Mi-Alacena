@@ -1,3 +1,11 @@
-PaymentNotification#paypal
+Hola <%= @pago[:first_name] %> <%= @pago[:last_name] %>
 
-= @greeting + ", find me in app/views/payment_notification/paypal.text.haml"
+====================
+Confirmamos tu pago de <%= @pago[:item_name1] %> por <%= number_to_currency @pago[:mc_gross] %>.
+En los proximos días recibiras estaras recibiendo tu pedido.
+<% if @surtidas %>
+
+Para elegir los sabores de tus donas responde a este correo con la lista que deseas. 
+
+Sabores Krispy Kreme (http://www.krispykreme.mx/index.php?art_id=65&categ=346)
+<% end %>
