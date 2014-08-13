@@ -8,7 +8,8 @@ class PaymentNotification < ActionMailer::Base
   #
   def paypal(pago)
     @pago = pago
-    @surtidas = false
+    attachments.inline['logo.png'] = File.read('/app/assets/images/logo.png')
+    @surtidas = pago[:item_name1] == "DONAS SURTIDAS KRISPY KREME"
     delivery_options = { user_name: "hola@mialacena.mx",
                          password: "Mail123",
                          address: "smtp.mailgun.org" }
@@ -24,6 +25,7 @@ class PaymentNotification < ActionMailer::Base
 
   def compropago(pago)
     @pago = pago
+    attachments.inline['logo.png'] = File.read('/app/assets/images/logo.png')
     @surtidas = pago['data']['object']['payment_details']['product_name'] == "DONAS SURTIDAS KRISPY KREME"
     delivery_options = { user_name: "hola@mialacena.mx",
                          password: "Mail123",
