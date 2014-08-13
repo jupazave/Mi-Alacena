@@ -1,6 +1,6 @@
 class LogisticaController < ApplicationController
 	def index
-		@contact = Contact.new
+		
 	end
 
 	def create
