@@ -14,6 +14,8 @@ class WebhookController < ApplicationController
     	mensaje = "Se ha generado un ticket de pago de $#{data_json['data']['object']['amount']}"
 
     elsif data_json['type'] == "charge.success"
+
+      PaymentNotification.compropago(data_json).deliver
     		
     	mensaje = "Se recibío un pago de $#{data_json['data']['object']['amount']}"
 
@@ -47,6 +49,8 @@ class WebhookController < ApplicationController
     	mensaje = "Push vacio"
 
 	    if params[:payment_status] == "Completed"
+
+        PaymentNotification.paypal(params).deliver
 
 	    	mensaje = "Se ha recibido un pago en paypal de $#{params[:mc_gross]} #{params[:mc_currency]}"
 
