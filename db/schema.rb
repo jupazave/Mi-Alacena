@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729163443) do
+ActiveRecord::Schema.define(version: 20140810213427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,25 @@ ActiveRecord::Schema.define(version: 20140729163443) do
     t.datetime "updated_at"
   end
 
+  create_table "contacts", force: true do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "phone"
+    t.string   "product_link"
+    t.string   "product_name"
+    t.text     "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+  end
+
+  create_table "cupons", force: true do |t|
+    t.string   "key"
+    t.boolean  "used",       default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "fechas", force: true do |t|
     t.string   "title"
     t.string   "price"
@@ -89,12 +108,7 @@ ActiveRecord::Schema.define(version: 20140729163443) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "states", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "discount_url"
   end
 
 end

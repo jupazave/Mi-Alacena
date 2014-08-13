@@ -13,6 +13,7 @@ body
 
 h2
 	font-size: 50px
+
 	small
 		color: white
 
@@ -34,13 +35,40 @@ hr
 
 
 .banner
-	background-image: url('plane1.jpg')
-	background-position: center 0
+	background-image: url('mexico-usa.jpg')
 	height: 360px
 	color: #FFF
 	margin: 20px 0
 	padding-top: 30px
 	position: relative
+	text-shadow: 0.1em 0.1em 0.1em #000
+	background-position: 0 0
+	@include max-screen(580px) 
+		background-position: -64px 0
+	@include max-screen(333px) 
+		background-position: -133px 0
+		
+
+	.to-form
+		padding: 50px
+		padding-top: 10px
+		@include screen(1px, 333px) 
+			padding: 0
+			padding-top: 10px
+			padding-left: 15px
+			padding-right: 15px
+	h2
+		font-size: 30px
+
+	.boton
+		display: block
+		width: 80%
+		margin: 0 auto
+		margin-top: 30px
+		@include screen(371px, 991px) 
+			margin-top: 100px
+		@include screen(1px, 370px) 
+			margin-top: 65px
 
 
 .badge 
@@ -55,15 +83,21 @@ hr
 .square 
 	font-family: "Oswald", sans-serif
 	font-size: 26px
-	width: 560px
+	//width: 560px
 	background-color: rgba(102, 23, 41, 0.8)
 	padding: 12px 22px
+	text-align: center
 
 	@include max-screen(991px)
 		font-size: 18px
 		width: auto
 		text-align: center
 
+.banner, .slide-a, .slide-b, .slide-c, .slide-d, .slide-e
+	.btn 
+		//margin: 100px 20px
+		padding: 20px
+		font-size: 20px
 
 .slide-a, .slide-b 
 	
@@ -214,21 +248,7 @@ hr
 
 
 
-.btn 
-	//margin: 100px 20px
-	padding: 20px
-	font-size: 20px
 
-
-
-.btn-primary 
-	background-color: #FF5F53
-	border: 0
-
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:focus 
-	background-color: #FF7E72
 
 
 .prensa
@@ -291,3 +311,18 @@ address
 	left: 0
 	width: 100%
 	height: 100%
+
+.btn-primary 
+	background-color: #FF5F53
+	border: 0
+	-webkit-transition: all 200ms ease-out
+	-moz-transition: all 200ms ease-out
+	-ms-transition: all 200ms ease-out
+	-o-transition: all 200ms ease-out
+	transition: all 200ms ease-out
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus 
+	background-color: lighten(#FF5F53, 10%)
+

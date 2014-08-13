@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'init/index'
   post 'webhook' => "webhook#push"
   post 'paypal' => "webhook#paypal"
+
+  get "logistica" => "logistica#index", as: :logistica
+  post "logistica" => "logistica#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

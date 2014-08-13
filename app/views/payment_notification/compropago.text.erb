@@ -1,0 +1,11 @@
+Hola <%= @pago['data']['object']['payment_details']['customer_name'] %>
+
+====================
+Confirmamos tu pago de <%= @pago['data']['object']['payment_details']['product_name'] %> por <%= number_to_currency @pago['data']['object']['payment_details']['product_price'] %>.
+En los proximos días recibiras estaras recibiendo tu pedido.
+<% if @surtidas %>
+
+Para elegir los sabores de tus donas responde a este correo con la lista que deseas. 
+
+Sabores Krispy Kreme (http://www.krispykreme.mx/index.php?art_id=65&categ=346)
+<% end %>
