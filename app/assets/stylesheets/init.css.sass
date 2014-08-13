@@ -83,9 +83,10 @@ hr
 .square 
 	font-family: "Oswald", sans-serif
 	font-size: 26px
-	width: 560px
+	//width: 560px
 	background-color: rgba(102, 23, 41, 0.8)
 	padding: 12px 22px
+	text-align: center
 
 	@include max-screen(991px)
 		font-size: 18px
@@ -97,15 +98,6 @@ hr
 		//margin: 100px 20px
 		padding: 20px
 		font-size: 20px
-
-	.btn-primary 
-		background-color: #FF5F53
-		border: 0
-
-	.btn-primary:hover,
-	.btn-primary:active,
-	.btn-primary:focus 
-		background-color: #FF7E72
 
 .slide-a, .slide-b 
 	
@@ -319,3 +311,18 @@ address
 	left: 0
 	width: 100%
 	height: 100%
+
+.btn-primary 
+	background-color: #FF5F53
+	border: 0
+	-webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus 
+	background-color: lighten(#FF5F53, 10%)
+
