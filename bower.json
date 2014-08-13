@@ -1,0 +1,17 @@
+{
+  "name": "MiAlacena",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jupazave/Mi-Alacena",
+  "authors": [
+    "Juan Pablo Zamora <jupazave@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
