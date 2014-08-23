@@ -27,7 +27,7 @@ class Landings::KrispykremeController < Landings::ApplicationController
 
   	end
 
-  	@envio = envio + 1
+  	@envio = envio
 
   end
 
