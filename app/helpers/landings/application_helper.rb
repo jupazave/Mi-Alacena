@@ -1,0 +1,2 @@
+module Landings::ApplicationHelper
+end

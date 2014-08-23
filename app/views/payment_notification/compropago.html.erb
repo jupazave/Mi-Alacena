@@ -80,7 +80,7 @@ background-color: #f6f6f6;
 										Confirmamos tu pago de <%= @pago['data']['object']['payment_details']['product_name'] %> por <%= number_to_currency @pago['data']['object']['payment_details']['product_price'] %>. <br> En los proximos días recibiras estaras recibiendo tu pedido.
 
 										
-										<% if @surtidas %>
+										<% if @surtidas || @pago['data']['object']['payment_details']['product_name'].include? "Surtidas" %>
 											
 											Para elegir los sabores de tus donas responde a este correo con la lista que deseas. 
 											<br />

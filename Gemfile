@@ -53,8 +53,8 @@ gem 'devise'
 gem 'paperclip', '~> 4.1.1'
 
 gem 'conekta'
+gem 'compropago'
 
 gem 'sass-mediaqueries-rails'
-
-gem "washbullet"
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'jquery-ui-rails', '~> 4.2.1'

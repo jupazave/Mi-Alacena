@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<p class="text-center">Confirma el pedido de tus donas Krispy Kreme de manera sencilla respondiendo las siguientes preguntas. <br>Tu pedido llegará el Sábado <%= @envio.strftime("%d/%m") %> en la dirección que te haremos llegar a tu correo.</p>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<%= form_for "pedido", url:landings_krispykreme_path, method: "POST" do |f| %>
+		<div class="form-group">
+			<%= f.label :name, "¿Cúal es tu nombre y apellido?" %>
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :email, "¿Cúal es tu email?" %>
+			<%= f.text_field :email, class: "form-control" %>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-6">
+				<%= f.label :glaseadas, "¿Cúantas docenas de donas glaseadas deseas?" %>
+				<%= f.number_field :glaseadas, class: "form-control", :value => 1 %>
+			</div>
+			<div class="col-md-6">
+				<%= f.label :surtidas, "¿Cúantas docenas de donas surtidas deseas?" %>
+				<%= f.number_field :surtidas, class: "form-control", :value => 1 %>
+			</div>
+		</div>
+
+
+
+		<div id="no_quiero" class="form-group" style="display:none">
+			<%= f.label :sabores, "¿Qué sabores deseas? <small>(Deja en blanco si quieres que sean sorpresa )</small>".html_safe %>
+			<%= f.text_area :sabores, class: "form-control",:size =>"3x5" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :establishment, "Deseo pagar en:" %>
+			<%= f.select :establishment, Hash[PaymentEstablishment.all.map{|e| [e.name,e.key]}],  {}, { :class => 'form-control' }%>
+		</div>
+
+		<%= f.submit "Enviar", :disable_with => 'Enviando...',class: "btn btn-lg btn-block btn-primary" %>
+		<% end %>
+	</div>
+</div>

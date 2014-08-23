@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<p><%= @response["payment_instructions"]["description"] %>
+		<ul>
+			<li><%= @response["payment_instructions"]["step_1"] %></li>
+			<li><%= @response["payment_instructions"]["step_2"] %></li>
+			<li><%= @response["payment_instructions"]["step_3"] %></li>
+		</ul>
+		<%= @response["payment_instructions"]["note_extra_comition"] %>
+		<%= @response["payment_instructions"]["note_expiration_date"] %></p>
+		<h3 class="text-center">¡Gracias por tu compra!</h3>
+	</div>
+</div>

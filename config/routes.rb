@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   
 
+  namespace :landings do
+    get "krispykreme" => "krispykreme#index", as: :krispykreme
+    post "krispykreme" => "krispykreme#create"
+  end
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'init/index'
+  get "/landings" => redirect("/")
   post 'webhook' => "webhook#push"
   post 'paypal' => "webhook#paypal"
 

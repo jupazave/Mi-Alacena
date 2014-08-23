@@ -1,0 +1,2 @@
+module Landings::KrispykremeHelper
+end
