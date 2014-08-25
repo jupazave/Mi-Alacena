@@ -70,15 +70,6 @@ class Landings::KrispykremeController < Landings::ApplicationController
 	  	total_s = surtidas * 230
 
   	end
-
-  	@alive_payment = false
-
-
-  	if Date.today > envio - 3 || Date.today === envio - 3
-
-  		@alive_payment = true
-
-  	end
   	
 
   	total = total_g + total_s
@@ -103,8 +94,20 @@ class Landings::KrispykremeController < Landings::ApplicationController
   	compropago = Compropago::Client.new("sk_live_45a2107597d723ceb")
 		compra = compropago.create_charge(total, packages, params[:pedido][:name], params[:pedido][:email], params[:pedido][:establishment])
 
-    Landings::KrispyKreme.private_email(params).deliver
-			
-		@response = JSON.parse compra.body
+    @response = JSON.parse compra.body
+    
+    object = {
+      :id => @response["payment_id"],
+      :name => params[:pedido][:name],
+      :email => params[:pedido][:email],
+      :tel => params[:pedido][:tel],
+      :glaseadas => params[:pedido][:glaseadas],
+      :surtidas => params[:pedido][:surtidas],
+      :sabores => params[:pedido][:sabores],
+      :fecha_envio => envio
+    }
+
+    Landings::Krispykreme.create(object)
+		
   end
 end

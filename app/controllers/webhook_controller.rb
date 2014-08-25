@@ -25,6 +25,18 @@ class WebhookController < ApplicationController
       name: data_json['data']['object']['payment_details']['customer_name'],
       email: data_json['data']['object']['payment_details']['customer_email']
       })
+
+      begin
+
+        pago = Landings::Krispykreme.find(data_json['data']['object']['id'])
+
+        pago.pagado = true
+
+        pago.save!
+
+      rescue ActiveRecord::RecordNotFound => e
+
+      end
     		
     	mensaje = "Se recibío un pago de $#{data_json['data']['object']['amount']}"
 
