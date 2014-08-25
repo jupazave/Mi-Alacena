@@ -26,11 +26,11 @@
 		<div class="form-group row">
 			<div class="col-md-6">
 				<%= f.label :glaseadas, "¿Cúantas docenas de donas glaseadas deseas?" %>
-				<%= f.number_field :glaseadas, class: "form-control", :value => 1, :required => true %>
+				<%= f.number_field :glaseadas, class: "form-control", :value => 1, :required => true, :min => 0 %>
 			</div>
 			<div class="col-md-6">
 				<%= f.label :surtidas, "¿Cúantas docenas de donas surtidas deseas?" %>
-				<%= f.number_field :surtidas, class: "form-control", :value => 1, :required => true %>
+				<%= f.number_field :surtidas, class: "form-control", :value => 1, :required => true, :min => 0 %>
 			</div>
 		</div>
 
