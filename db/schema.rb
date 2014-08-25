@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140825180504) do
+ActiveRecord::Schema.define(version: 20140825191309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,17 +90,18 @@ ActiveRecord::Schema.define(version: 20140825180504) do
   end
 
   create_table "landings_krispykremes", id: false, force: true do |t|
-    t.string   "id",                          null: false
+    t.string   "id",                                                  null: false
     t.string   "name"
     t.string   "email"
     t.string   "tel"
     t.integer  "glaseadas"
     t.integer  "surtidas"
     t.text     "sabores"
-    t.boolean  "pagado",      default: false, null: false
+    t.boolean  "pagado",                              default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "fecha_envio"
+    t.decimal  "costo",       precision: 8, scale: 2
   end
 
   create_table "payment_establishments", force: true do |t|

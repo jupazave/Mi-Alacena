@@ -20,9 +20,9 @@ $(document).ready(function () {
 		}
 
 		if($("#pedido_surtidas").val() == "0"){
-			$("#pedido_sabores").hide();
+			$("#no_quiero").hide();
 		}else{
-			$("#pedido_sabores").show();
+			$("#no_quiero").show();
 			
 
 		}

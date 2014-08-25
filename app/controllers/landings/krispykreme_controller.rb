@@ -104,7 +104,8 @@ class Landings::KrispykremeController < Landings::ApplicationController
       :glaseadas => params[:pedido][:glaseadas],
       :surtidas => params[:pedido][:surtidas],
       :sabores => params[:pedido][:sabores],
-      :fecha_envio => envio
+      :fecha_envio => envio,
+      :costo => total
     }
 
     Landings::Krispykreme.create(object)
