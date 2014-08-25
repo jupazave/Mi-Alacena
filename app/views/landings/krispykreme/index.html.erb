@@ -46,7 +46,7 @@
 			<%= f.select :establishment, Hash[PaymentEstablishment.all.map{|e| [e.name,e.key]}],  {}, { :class => 'form-control' }%>
 		</div>
 
-		<%= f.submit "Enviar", :disable_with => 'Enviando...',class: "btn btn-lg btn-block btn-primary", id: "pedido_donas" %>
+		<%= f.submit "Enviar", :disable_with => 'Enviando...',class: "btn btn-lg btn-block btn-primary" %>
 		<% end %>
 	</div>
 </div>

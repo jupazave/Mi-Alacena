@@ -17,17 +17,17 @@ $(document).ready(function () {
 		if (($("#pedido_glaseadas").val() == "0") && ($("#pedido_surtidas").val() == "0")) {
 			console.log($("#pedido_glaseadas").val());
 			console.log($("#pedido_surtidas").val());
-			$("#pedido_donas").attr("disabled");
+			$("#pedido_form input[submit]").attr("disabled");
 		}else{
-			$("#pedido_donas").removeAttr( "disabled" );
+			$("#pedido_form input[submit]").removeAttr( "disabled" );
 		}
 	});
 
 	$("#pedido_surtidas").change(function () {
 		if (($("#pedido_glaseadas").val() == "0") && ($("#pedido_surtidas").val() == "0")) {
-			$("#pedido_donas").attr("disabled");
+			$("#pedido_form input[submit]").attr("disabled");
 		}else{
-			$("#pedido_donas").removeAttr( "disabled" );
+			$("#pedido_form input[submit]").removeAttr( "disabled" );
 		}
 	});
 });
