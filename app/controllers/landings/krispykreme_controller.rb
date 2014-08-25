@@ -102,6 +102,8 @@ class Landings::KrispykremeController < Landings::ApplicationController
 
   	compropago = Compropago::Client.new("sk_live_45a2107597d723ceb")
 		compra = compropago.create_charge(total, packages, params[:pedido][:name], params[:pedido][:email], params[:pedido][:establishment])
+
+    Landings::KrispyKreme.private_email(params).deliver
 			
 		@response = JSON.parse compra.body
   end

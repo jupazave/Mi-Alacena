@@ -321,8 +321,18 @@ address
 	-o-transition: all 200ms ease-out
 	transition: all 200ms ease-out
 
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:focus 
-	background-color: lighten(#FF5F53, 10%)
+	&:hover,
+	&:active,
+	&:focus,
+	&.active
+		background-color: lighten(#FF5F53, 10%)
+
+	&.disabled,
+	&[disabled]
+		&,
+		&:hover,
+		&:active,
+		&:focus,
+		&.active
+			background-color: lighten(#FF5F53, 25%)
 

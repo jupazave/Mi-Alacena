@@ -13,24 +13,24 @@
 </div>
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
-		<%= form_for "pedido", url:landings_krispykreme_path, method: "POST" do |f| %>
+		<%= form_for "pedido", url:landings_krispykreme_path, method: "POST", :html => { :id => "pedido_form" } do |f| %>
 		<div class="form-group">
 			<%= f.label :name, "¿Cúal es tu nombre y apellido?" %>
-			<%= f.text_field :name, class: "form-control" %>
+			<%= f.text_field :name, class: "form-control", :required => true %>
 		</div>
 		<div class="form-group">
 			<%= f.label :email, "¿Cúal es tu email?" %>
-			<%= f.text_field :email, class: "form-control" %>
+			<%= f.text_field :email, class: "form-control", :required => true %>
 		</div>
 
 		<div class="form-group row">
 			<div class="col-md-6">
 				<%= f.label :glaseadas, "¿Cúantas docenas de donas glaseadas deseas?" %>
-				<%= f.number_field :glaseadas, class: "form-control", :value => 1 %>
+				<%= f.number_field :glaseadas, class: "form-control", :value => 1, :required => true %>
 			</div>
 			<div class="col-md-6">
 				<%= f.label :surtidas, "¿Cúantas docenas de donas surtidas deseas?" %>
-				<%= f.number_field :surtidas, class: "form-control", :value => 1 %>
+				<%= f.number_field :surtidas, class: "form-control", :value => 1, :required => true %>
 			</div>
 		</div>
 
@@ -46,7 +46,7 @@
 			<%= f.select :establishment, Hash[PaymentEstablishment.all.map{|e| [e.name,e.key]}],  {}, { :class => 'form-control' }%>
 		</div>
 
-		<%= f.submit "Enviar", :disable_with => 'Enviando...',class: "btn btn-lg btn-block btn-primary" %>
+		<%= f.submit "Enviar", :disable_with => 'Enviando...',class: "btn btn-lg btn-block btn-primary", id: "pedido_donas" %>
 		<% end %>
 	</div>
 </div>

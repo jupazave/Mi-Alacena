@@ -23,6 +23,8 @@ module MiAlacena
 
     config.i18n.default_locale = :es_MX
 
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+
     config.serve_static_assets = true
 
     config.generators do |g|
