@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
-		<p class="text-center">Confirma el pedido de tus donas Krispy Kreme de manera sencilla respondiendo las siguientes preguntas. <br>Tu pedido llegará el Sábado <%= @envio.strftime("%d/%m") %> en la dirección que te haremos llegar a tu correo.</p>
+		<p class="text-center">Confirma el pedido de tus donas Krispy Kreme de manera sencilla respondiendo las siguientes preguntas. <br>Tu pedido llegará el <i>Sábado <%= @envio.strftime("%d") %> de <%= get_month @envio.strftime("%m") %> </i>en la dirección que te haremos llegar a tu correo.</p>
 	</div>
 
 </div>
@@ -30,11 +30,11 @@
 
 		<div class="form-group row">
 			<div class="col-md-6">
-				<%= f.label :glaseadas, "¿Cúantas docenas de donas glaseadas deseas?" %>
+				<%= f.label :glaseadas, raw("¿Cúantas docenas de donas glaseadas deseas? <small>#{number_to_currency(@price_g, locale: :es_MX)}</small>") %>
 				<%= f.number_field :glaseadas, class: "form-control", :value => 1, :required => true, :min => 0 %>
 			</div>
 			<div class="col-md-6">
-				<%= f.label :surtidas, "¿Cúantas docenas de donas surtidas deseas?" %>
+				<%= f.label :surtidas, raw("¿Cúantas docenas de donas surtidas deseas? <small>#{number_to_currency(@price_s, locale: :es_MX)}</small>") %>
 				<%= f.number_field :surtidas, class: "form-control", :value => 1, :required => true, :min => 0 %>
 			</div>
 		</div>
