@@ -1,13 +1,13 @@
 class Landings::KrispykremeController < Landings::ApplicationController
   def index
 
-  	envio = Date.new(2014,9,6)
+  	envio = Date.new(2014,9,13)
 
   	until Date.today < envio || Date.today === envio
 
   		envio = envio+14
 
-  		if Date.today === envio && (Time.now.hour == 3 || Time.now.hour > 3)
+  		if Date.today === envio
 
 	  		envio = envio+14
 
@@ -41,17 +41,17 @@ class Landings::KrispykremeController < Landings::ApplicationController
   	surtidas = params[:pedido][:surtidas].to_i
   	sabores = nil
 
-  	if surtidas < 0
+  	if surtidas > 0
   		sabores = params[:pedido][:sabores]
   	end
 
-  	envio = Date.new(2014,9,6)
+  	envio = Date.new(2014,9,13)
 
   	until Date.today < envio || Date.today === envio
 
   		envio = envio+14
 
-  		if Date.today === envio && (Time.now.hour == 3 || Time.now.hour > 3)
+  		if Date.today === envio
 
 	  		envio = envio+14
 
