@@ -30,11 +30,11 @@
 
 		<div class="form-group row">
 			<div class="col-md-6">
-				<%= f.label :glaseadas, raw("¿Cúantas docenas de donas glaseadas deseas? <small>#{number_to_currency(@price_g, locale: :es_MX)}</small>") %>
+				<%= f.label :glaseadas, raw("¿Cúantas docenas de donas glaseadas deseas? <small>$#{@price_g}.00</small>") %>
 				<%= f.number_field :glaseadas, class: "form-control", :value => 1, :required => true, :min => 0 %>
 			</div>
 			<div class="col-md-6">
-				<%= f.label :surtidas, raw("¿Cúantas docenas de donas surtidas deseas? <small>#{number_to_currency(@price_s, locale: :es_MX)}</small>") %>
+				<%= f.label :surtidas, raw("¿Cúantas docenas de donas surtidas deseas? <small>$#{@price_s}.00</small>") %>
 				<%= f.number_field :surtidas, class: "form-control", :value => 1, :required => true, :min => 0 %>
 			</div>
 		</div>
