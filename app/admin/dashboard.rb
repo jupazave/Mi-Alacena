@@ -16,9 +16,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Pedidos Krispy" do
           ul do
-            Landings::Krispykreme.recent(5).map do |post|
-              li link_to(post.title, admin_post_path(post))
-            end
+            li "Welcome to ActiveAdmin."
           end
         end
       end

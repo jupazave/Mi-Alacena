@@ -15,7 +15,6 @@ ActiveAdmin.register Landings::Krispykreme do
   # end
 
   index do
-    column :image_title
     column :name
     column :pagado
     column :glaseadas
