@@ -13,5 +13,15 @@ ActiveAdmin.register Landings::Krispykreme do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+
+  index do
+    column :image_title
+    column :name
+    column :pagado
+    column :glaseadas
+    column :surtidas
+    column :costo
+    default_actions
+  end
   
 end
