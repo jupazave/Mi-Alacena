@@ -14,13 +14,13 @@ ActiveAdmin.register Landings::Krispykreme do
   #  permitted
   # end
 
-  index do
-    column :name
-    column :pagado
-    column :glaseadas
-    column :surtidas
-    column :costo
-    default_actions
-  end
+  # index do
+  #   column :name
+  #   column :pagado
+  #   column :glaseadas
+  #   column :surtidas
+  #   column :costo
+  #   default_actions
+  # end
   
 end
