@@ -20,7 +20,7 @@ ActiveAdmin.register Landings::Krispykreme do
   #   column :glaseadas
   #   column :surtidas
   #   column :costo
-  #   default_actions
+  #   defautl_actions
   # end
   
 end
