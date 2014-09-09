@@ -15,7 +15,7 @@ class Landings::KrispykremeController < Landings::ApplicationController
   		
   	end
 
-  	if Date.today > envio - 4
+  	if Date.today > envio - 4 || Date.today === envio - 4
 
   		@price_g =  210
   		@price_s =  260
