@@ -23,8 +23,9 @@ class PaymentNotification < ActionMailer::Base
   #   en.payment_notification.compropago.subject
   # 
 
-  def compropago(pago)
+  def compropago(pago, fecha)
     @pago = pago
+    @fecha = fecha
     attachments.inline['logo.png'] = File.read( Rails.root.join("app/assets/images/","logo.png") )
     @surtidas = pago['data']['object']['payment_details']['product_name'] == "DONAS SURTIDAS KRISPY KREME"
     delivery_options = { user_name: "hola@mialacena.mx",

@@ -77,7 +77,16 @@ background-color: #f6f6f6;
 								</tr>
 								<tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; padding: 0;">
 									<td class="content-block" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-										Confirmamos tu pago de <%= @pago['data']['object']['payment_details']['product_name'] %> por <%= number_to_currency @pago['data']['object']['payment_details']['product_price'] %>. <br> En los proximos días recibiras estaras recibiendo tu pedido.
+										Confirmamos tu pago de <%= @pago['data']['object']['payment_details']['product_name'] %> por <%= number_to_currency @pago['data']['object']['payment_details']['product_price'] %>.
+											
+										<% if !@fecha.nil? %>
+
+											<br> Tu pedido se entregará <%= @fecha %> en el Hotel Casa Nobel, en la dirección C.72 N° 403-C cruzamiento 39 y 41, Mérida, Yucatan.
+
+										<% else %>
+										  <br> En los proximos días recibiras estaras recibiendo tu pedido.
+										<% end %>
+										 
 
 										
 										<% if @surtidas %>

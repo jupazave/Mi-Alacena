@@ -15,7 +15,7 @@ class WebhookController < ApplicationController
 
     elsif data_json['type'] == "charge.success"
 
-      PaymentNotification.compropago(data_json).deliver
+      
 
       Payment.create({
       service: true,
@@ -26,6 +26,8 @@ class WebhookController < ApplicationController
       email: data_json['data']['object']['payment_details']['customer_email']
       })
 
+      fecha = nil
+
       begin
 
         pago = Landings::Krispykreme.find(data_json['data']['object']['id'])
@@ -34,9 +36,13 @@ class WebhookController < ApplicationController
 
         pago.save!
 
+        fecha = pago.fecha_envio
+
       rescue ActiveRecord::RecordNotFound => e
 
       end
+      
+      PaymentNotification.compropago(data_json, fecha).deliver
     		
     	mensaje = "Se recibío un pago de $#{data_json['data']['object']['amount']}"
 
